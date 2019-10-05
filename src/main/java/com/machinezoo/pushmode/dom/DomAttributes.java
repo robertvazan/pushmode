@@ -365,25 +365,25 @@ public interface DomAttributes {
 		return attributeAsString("attributeName");
 	}
 	/**
-	 * Sets SVG attribute {@code attribute​Type}.
+	 * Sets SVG attribute {@code attributeType}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code attribute​Type} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code attributeType} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement attribute​Type(String value) {
-		return set("attribute​Type", value);
+	default DomElement attributeType(String value) {
+		return set("attributeType", value);
 	}
 	/**
-	 * Gets SVG attribute {@code attribute​Type}.
+	 * Gets SVG attribute {@code attributeType}.
 	 *
-	 * @return value of the {@code attribute​Type} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code attributeType} attribute or {@code null} if the attribute is missing
 	 */
-	default String attribute​Type() {
-		return attributeAsString("attribute​Type");
+	default String attributeType() {
+		return attributeAsString("attributeType");
 	}
 	/**
 	 * Sets HTML attribute {@code autocapitalize}.
@@ -535,6 +535,51 @@ public interface DomAttributes {
 		return attributeAsDouble("azimuth");
 	}
 	/**
+	 * Sets SVG attribute {@code baseFrequency}.
+	 * If {@code value} is {@code null}, the attribute is removed.
+	 *
+	 * @param value
+	 *            new value of the {@code baseFrequency} attribute or {@code null} to remove the attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement baseFrequency(String value) {
+		return set("baseFrequency", value);
+	}
+	/**
+	 * Gets SVG attribute {@code baseFrequency}.
+	 *
+	 * @return value of the {@code baseFrequency} attribute or {@code null} if the attribute is missing
+	 */
+	default String baseFrequency() {
+		return attributeAsString("baseFrequency");
+	}
+	/**
+	 * Sets SVG attribute {@code baseFrequency} to a floating-point value.
+	 *
+	 * @param value
+	 *            new value of the {@code baseFrequency} attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement baseFrequency(double value) {
+		return set("baseFrequency", value);
+	}
+	/**
+	 * Gets SVG attribute {@code baseFrequency} as a floating-point value.
+	 *
+	 * @param value
+	 *            value of the {@code baseFrequency} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 * @return {@code this}
+	 * @throws NumberFormatException
+	 *             if the attribute is not a floating-point number
+	 */
+	default OptionalDouble baseFrequencyAsDouble() {
+		return attributeAsDouble("baseFrequency");
+	}
+	/**
 	 * Sets SVG attribute {@code baseline-shift}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
@@ -578,51 +623,6 @@ public interface DomAttributes {
 	 */
 	default OptionalDouble baselineShiftAsDouble() {
 		return attributeAsDouble("baseline-shift");
-	}
-	/**
-	 * Sets SVG attribute {@code base​Frequency}.
-	 * If {@code value} is {@code null}, the attribute is removed.
-	 *
-	 * @param value
-	 *            new value of the {@code base​Frequency} attribute or {@code null} to remove the attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement base​Frequency(String value) {
-		return set("base​Frequency", value);
-	}
-	/**
-	 * Gets SVG attribute {@code base​Frequency}.
-	 *
-	 * @return value of the {@code base​Frequency} attribute or {@code null} if the attribute is missing
-	 */
-	default String base​Frequency() {
-		return attributeAsString("base​Frequency");
-	}
-	/**
-	 * Sets SVG attribute {@code base​Frequency} to a floating-point value.
-	 *
-	 * @param value
-	 *            new value of the {@code base​Frequency} attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement base​Frequency(double value) {
-		return set("base​Frequency", value);
-	}
-	/**
-	 * Gets SVG attribute {@code base​Frequency} as a floating-point value.
-	 *
-	 * @param value
-	 *            value of the {@code base​Frequency} attribute or an empty {@link OptionalDouble} if the attribute is missing
-	 * @return {@code this}
-	 * @throws NumberFormatException
-	 *             if the attribute is not a floating-point number
-	 */
-	default OptionalDouble base​FrequencyAsDouble() {
-		return attributeAsDouble("base​Frequency");
 	}
 	/**
 	 * Sets SVG attribute {@code begin}.
@@ -691,25 +691,25 @@ public interface DomAttributes {
 		return attributeAsDouble("bias");
 	}
 	/**
-	 * Sets SVG attribute {@code calc​Mode}.
+	 * Sets SVG attribute {@code calcMode}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code calc​Mode} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code calcMode} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement calc​Mode(String value) {
-		return set("calc​Mode", value);
+	default DomElement calcMode(String value) {
+		return set("calcMode", value);
 	}
 	/**
-	 * Gets SVG attribute {@code calc​Mode}.
+	 * Gets SVG attribute {@code calcMode}.
 	 *
-	 * @return value of the {@code calc​Mode} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code calcMode} attribute or {@code null} if the attribute is missing
 	 */
-	default String calc​Mode() {
-		return attributeAsString("calc​Mode");
+	default String calcMode() {
+		return attributeAsString("calcMode");
 	}
 	/**
 	 * Sets HTML attribute {@code charset}.
@@ -1825,25 +1825,25 @@ public interface DomAttributes {
 		return attributeAsDouble("dy");
 	}
 	/**
-	 * Sets SVG attribute {@code edge​Mode}.
+	 * Sets SVG attribute {@code edgeMode}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code edge​Mode} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code edgeMode} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement edge​Mode(String value) {
-		return set("edge​Mode", value);
+	default DomElement edgeMode(String value) {
+		return set("edgeMode", value);
 	}
 	/**
-	 * Gets SVG attribute {@code edge​Mode}.
+	 * Gets SVG attribute {@code edgeMode}.
 	 *
-	 * @return value of the {@code edge​Mode} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code edgeMode} attribute or {@code null} if the attribute is missing
 	 */
-	default String edge​Mode() {
-		return attributeAsString("edge​Mode");
+	default String edgeMode() {
+		return attributeAsString("edgeMode");
 	}
 	/**
 	 * Sets SVG attribute {@code elevation}.
@@ -1933,25 +1933,25 @@ public interface DomAttributes {
 		return attributeAsString("end");
 	}
 	/**
-	 * Sets SVG attribute {@code external​Resources​Required}.
+	 * Sets SVG attribute {@code externalResourcesRequired}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code external​Resources​Required} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code externalResourcesRequired} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement external​Resources​Required(String value) {
-		return set("external​Resources​Required", value);
+	default DomElement externalResourcesRequired(String value) {
+		return set("externalResourcesRequired", value);
 	}
 	/**
-	 * Gets SVG attribute {@code external​Resources​Required}.
+	 * Gets SVG attribute {@code externalResourcesRequired}.
 	 *
-	 * @return value of the {@code external​Resources​Required} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code externalResourcesRequired} attribute or {@code null} if the attribute is missing
 	 */
-	default String external​Resources​Required() {
-		return attributeAsString("external​Resources​Required");
+	default String externalResourcesRequired() {
+		return attributeAsString("externalResourcesRequired");
 	}
 	/**
 	 * Sets SVG attribute {@code fill}.
@@ -3334,6 +3334,27 @@ public interface DomAttributes {
 		return attributeAsDouble("kerning");
 	}
 	/**
+	 * Sets SVG attribute {@code keySplines}.
+	 * If {@code value} is {@code null}, the attribute is removed.
+	 *
+	 * @param value
+	 *            new value of the {@code keySplines} attribute or {@code null} to remove the attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement keySplines(String value) {
+		return set("keySplines", value);
+	}
+	/**
+	 * Gets SVG attribute {@code keySplines}.
+	 *
+	 * @return value of the {@code keySplines} attribute or {@code null} if the attribute is missing
+	 */
+	default String keySplines() {
+		return attributeAsString("keySplines");
+	}
+	/**
 	 * Sets SVG attribute {@code keyTimes}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
@@ -3353,27 +3374,6 @@ public interface DomAttributes {
 	 */
 	default String keyTimes() {
 		return attributeAsString("keyTimes");
-	}
-	/**
-	 * Sets SVG attribute {@code key​Splines}.
-	 * If {@code value} is {@code null}, the attribute is removed.
-	 *
-	 * @param value
-	 *            new value of the {@code key​Splines} attribute or {@code null} to remove the attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement key​Splines(String value) {
-		return set("key​Splines", value);
-	}
-	/**
-	 * Gets SVG attribute {@code key​Splines}.
-	 *
-	 * @return value of the {@code key​Splines} attribute or {@code null} if the attribute is missing
-	 */
-	default String key​Splines() {
-		return attributeAsString("key​Splines");
 	}
 	/**
 	 * Sets HTML attribute {@code kind}.
@@ -3526,49 +3526,49 @@ public interface DomAttributes {
 		return attributeAsString("lighting-color");
 	}
 	/**
-	 * Sets SVG attribute {@code limiting​Cone​Angle}.
+	 * Sets SVG attribute {@code limitingConeAngle}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code limiting​Cone​Angle} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code limitingConeAngle} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement limiting​Cone​Angle(String value) {
-		return set("limiting​Cone​Angle", value);
+	default DomElement limitingConeAngle(String value) {
+		return set("limitingConeAngle", value);
 	}
 	/**
-	 * Gets SVG attribute {@code limiting​Cone​Angle}.
+	 * Gets SVG attribute {@code limitingConeAngle}.
 	 *
-	 * @return value of the {@code limiting​Cone​Angle} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code limitingConeAngle} attribute or {@code null} if the attribute is missing
 	 */
-	default String limiting​Cone​Angle() {
-		return attributeAsString("limiting​Cone​Angle");
+	default String limitingConeAngle() {
+		return attributeAsString("limitingConeAngle");
 	}
 	/**
-	 * Sets SVG attribute {@code limiting​Cone​Angle} to a floating-point value.
+	 * Sets SVG attribute {@code limitingConeAngle} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code limiting​Cone​Angle} attribute
+	 *            new value of the {@code limitingConeAngle} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement limiting​Cone​Angle(double value) {
-		return set("limiting​Cone​Angle", value);
+	default DomElement limitingConeAngle(double value) {
+		return set("limitingConeAngle", value);
 	}
 	/**
-	 * Gets SVG attribute {@code limiting​Cone​Angle} as a floating-point value.
+	 * Gets SVG attribute {@code limitingConeAngle} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code limiting​Cone​Angle} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code limitingConeAngle} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble limiting​Cone​AngleAsDouble() {
-		return attributeAsDouble("limiting​Cone​Angle");
+	default OptionalDouble limitingConeAngleAsDouble() {
+		return attributeAsDouble("limitingConeAngle");
 	}
 	/**
 	 * Sets HTML attribute {@code list}.
@@ -3752,6 +3752,51 @@ public interface DomAttributes {
 		return attributeAsString("marker-start");
 	}
 	/**
+	 * Sets SVG attribute {@code markerHeight}.
+	 * If {@code value} is {@code null}, the attribute is removed.
+	 *
+	 * @param value
+	 *            new value of the {@code markerHeight} attribute or {@code null} to remove the attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement markerHeight(String value) {
+		return set("markerHeight", value);
+	}
+	/**
+	 * Gets SVG attribute {@code markerHeight}.
+	 *
+	 * @return value of the {@code markerHeight} attribute or {@code null} if the attribute is missing
+	 */
+	default String markerHeight() {
+		return attributeAsString("markerHeight");
+	}
+	/**
+	 * Sets SVG attribute {@code markerHeight} to a floating-point value.
+	 *
+	 * @param value
+	 *            new value of the {@code markerHeight} attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement markerHeight(double value) {
+		return set("markerHeight", value);
+	}
+	/**
+	 * Gets SVG attribute {@code markerHeight} as a floating-point value.
+	 *
+	 * @param value
+	 *            value of the {@code markerHeight} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 * @return {@code this}
+	 * @throws NumberFormatException
+	 *             if the attribute is not a floating-point number
+	 */
+	default OptionalDouble markerHeightAsDouble() {
+		return attributeAsDouble("markerHeight");
+	}
+	/**
 	 * Sets SVG attribute {@code markerUnits}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
@@ -3773,94 +3818,49 @@ public interface DomAttributes {
 		return attributeAsString("markerUnits");
 	}
 	/**
-	 * Sets SVG attribute {@code marker​Height}.
+	 * Sets SVG attribute {@code markerWidth}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code marker​Height} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code markerWidth} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement marker​Height(String value) {
-		return set("marker​Height", value);
+	default DomElement markerWidth(String value) {
+		return set("markerWidth", value);
 	}
 	/**
-	 * Gets SVG attribute {@code marker​Height}.
+	 * Gets SVG attribute {@code markerWidth}.
 	 *
-	 * @return value of the {@code marker​Height} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code markerWidth} attribute or {@code null} if the attribute is missing
 	 */
-	default String marker​Height() {
-		return attributeAsString("marker​Height");
+	default String markerWidth() {
+		return attributeAsString("markerWidth");
 	}
 	/**
-	 * Sets SVG attribute {@code marker​Height} to a floating-point value.
+	 * Sets SVG attribute {@code markerWidth} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code marker​Height} attribute
+	 *            new value of the {@code markerWidth} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement marker​Height(double value) {
-		return set("marker​Height", value);
+	default DomElement markerWidth(double value) {
+		return set("markerWidth", value);
 	}
 	/**
-	 * Gets SVG attribute {@code marker​Height} as a floating-point value.
+	 * Gets SVG attribute {@code markerWidth} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code marker​Height} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code markerWidth} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble marker​HeightAsDouble() {
-		return attributeAsDouble("marker​Height");
-	}
-	/**
-	 * Sets SVG attribute {@code marker​Width}.
-	 * If {@code value} is {@code null}, the attribute is removed.
-	 *
-	 * @param value
-	 *            new value of the {@code marker​Width} attribute or {@code null} to remove the attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement marker​Width(String value) {
-		return set("marker​Width", value);
-	}
-	/**
-	 * Gets SVG attribute {@code marker​Width}.
-	 *
-	 * @return value of the {@code marker​Width} attribute or {@code null} if the attribute is missing
-	 */
-	default String marker​Width() {
-		return attributeAsString("marker​Width");
-	}
-	/**
-	 * Sets SVG attribute {@code marker​Width} to a floating-point value.
-	 *
-	 * @param value
-	 *            new value of the {@code marker​Width} attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement marker​Width(double value) {
-		return set("marker​Width", value);
-	}
-	/**
-	 * Gets SVG attribute {@code marker​Width} as a floating-point value.
-	 *
-	 * @param value
-	 *            value of the {@code marker​Width} attribute or an empty {@link OptionalDouble} if the attribute is missing
-	 * @return {@code this}
-	 * @throws NumberFormatException
-	 *             if the attribute is not a floating-point number
-	 */
-	default OptionalDouble marker​WidthAsDouble() {
-		return attributeAsDouble("marker​Width");
+	default OptionalDouble markerWidthAsDouble() {
+		return attributeAsDouble("markerWidth");
 	}
 	/**
 	 * Sets SVG attribute {@code mask}.
@@ -4755,25 +4755,25 @@ public interface DomAttributes {
 		return attributeAsString("patternTransform");
 	}
 	/**
-	 * Sets SVG attribute {@code pattern​Units}.
+	 * Sets SVG attribute {@code patternUnits}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code pattern​Units} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code patternUnits} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement pattern​Units(String value) {
-		return set("pattern​Units", value);
+	default DomElement patternUnits(String value) {
+		return set("patternUnits", value);
 	}
 	/**
-	 * Gets SVG attribute {@code pattern​Units}.
+	 * Gets SVG attribute {@code patternUnits}.
 	 *
-	 * @return value of the {@code pattern​Units} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code patternUnits} attribute or {@code null} if the attribute is missing
 	 */
-	default String pattern​Units() {
-		return attributeAsString("pattern​Units");
+	default String patternUnits() {
+		return attributeAsString("patternUnits");
 	}
 	/**
 	 * Adds boolean HTML attribute {@code ping}.
@@ -5047,67 +5047,67 @@ public interface DomAttributes {
 		return attributeAsString("preload");
 	}
 	/**
-	 * Sets SVG attribute {@code preserve​Alpha}.
+	 * Sets SVG attribute {@code preserveAlpha}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code preserve​Alpha} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code preserveAlpha} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement preserve​Alpha(String value) {
-		return set("preserve​Alpha", value);
+	default DomElement preserveAlpha(String value) {
+		return set("preserveAlpha", value);
 	}
 	/**
-	 * Gets SVG attribute {@code preserve​Alpha}.
+	 * Gets SVG attribute {@code preserveAlpha}.
 	 *
-	 * @return value of the {@code preserve​Alpha} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code preserveAlpha} attribute or {@code null} if the attribute is missing
 	 */
-	default String preserve​Alpha() {
-		return attributeAsString("preserve​Alpha");
+	default String preserveAlpha() {
+		return attributeAsString("preserveAlpha");
 	}
 	/**
-	 * Sets SVG attribute {@code preserve​Aspect​Ratio}.
+	 * Sets SVG attribute {@code preserveAspectRatio}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code preserve​Aspect​Ratio} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code preserveAspectRatio} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement preserve​Aspect​Ratio(String value) {
-		return set("preserve​Aspect​Ratio", value);
+	default DomElement preserveAspectRatio(String value) {
+		return set("preserveAspectRatio", value);
 	}
 	/**
-	 * Gets SVG attribute {@code preserve​Aspect​Ratio}.
+	 * Gets SVG attribute {@code preserveAspectRatio}.
 	 *
-	 * @return value of the {@code preserve​Aspect​Ratio} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code preserveAspectRatio} attribute or {@code null} if the attribute is missing
 	 */
-	default String preserve​Aspect​Ratio() {
-		return attributeAsString("preserve​Aspect​Ratio");
+	default String preserveAspectRatio() {
+		return attributeAsString("preserveAspectRatio");
 	}
 	/**
-	 * Sets SVG attribute {@code primitive​Units}.
+	 * Sets SVG attribute {@code primitiveUnits}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code primitive​Units} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code primitiveUnits} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement primitive​Units(String value) {
-		return set("primitive​Units", value);
+	default DomElement primitiveUnits(String value) {
+		return set("primitiveUnits", value);
 	}
 	/**
-	 * Gets SVG attribute {@code primitive​Units}.
+	 * Gets SVG attribute {@code primitiveUnits}.
 	 *
-	 * @return value of the {@code primitive​Units} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code primitiveUnits} attribute or {@code null} if the attribute is missing
 	 */
-	default String primitive​Units() {
-		return attributeAsString("primitive​Units");
+	default String primitiveUnits() {
+		return attributeAsString("primitiveUnits");
 	}
 	/**
 	 * Sets SVG attribute {@code r}.
@@ -5363,6 +5363,51 @@ public interface DomAttributes {
 		return attributeAsString("rel");
 	}
 	/**
+	 * Sets SVG attribute {@code repeatCount}.
+	 * If {@code value} is {@code null}, the attribute is removed.
+	 *
+	 * @param value
+	 *            new value of the {@code repeatCount} attribute or {@code null} to remove the attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement repeatCount(String value) {
+		return set("repeatCount", value);
+	}
+	/**
+	 * Gets SVG attribute {@code repeatCount}.
+	 *
+	 * @return value of the {@code repeatCount} attribute or {@code null} if the attribute is missing
+	 */
+	default String repeatCount() {
+		return attributeAsString("repeatCount");
+	}
+	/**
+	 * Sets SVG attribute {@code repeatCount} to a floating-point value.
+	 *
+	 * @param value
+	 *            new value of the {@code repeatCount} attribute
+	 * @return {@code this}
+	 * @throws IllegalStateException
+	 *             if the element is frozen
+	 */
+	default DomElement repeatCount(double value) {
+		return set("repeatCount", value);
+	}
+	/**
+	 * Gets SVG attribute {@code repeatCount} as a floating-point value.
+	 *
+	 * @param value
+	 *            value of the {@code repeatCount} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 * @return {@code this}
+	 * @throws NumberFormatException
+	 *             if the attribute is not a floating-point number
+	 */
+	default OptionalDouble repeatCountAsDouble() {
+		return attributeAsDouble("repeatCount");
+	}
+	/**
 	 * Sets SVG attribute {@code repeatDur}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
@@ -5382,51 +5427,6 @@ public interface DomAttributes {
 	 */
 	default String repeatDur() {
 		return attributeAsString("repeatDur");
-	}
-	/**
-	 * Sets SVG attribute {@code repeat​Count}.
-	 * If {@code value} is {@code null}, the attribute is removed.
-	 *
-	 * @param value
-	 *            new value of the {@code repeat​Count} attribute or {@code null} to remove the attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement repeat​Count(String value) {
-		return set("repeat​Count", value);
-	}
-	/**
-	 * Gets SVG attribute {@code repeat​Count}.
-	 *
-	 * @return value of the {@code repeat​Count} attribute or {@code null} if the attribute is missing
-	 */
-	default String repeat​Count() {
-		return attributeAsString("repeat​Count");
-	}
-	/**
-	 * Sets SVG attribute {@code repeat​Count} to a floating-point value.
-	 *
-	 * @param value
-	 *            new value of the {@code repeat​Count} attribute
-	 * @return {@code this}
-	 * @throws IllegalStateException
-	 *             if the element is frozen
-	 */
-	default DomElement repeat​Count(double value) {
-		return set("repeat​Count", value);
-	}
-	/**
-	 * Gets SVG attribute {@code repeat​Count} as a floating-point value.
-	 *
-	 * @param value
-	 *            value of the {@code repeat​Count} attribute or an empty {@link OptionalDouble} if the attribute is missing
-	 * @return {@code this}
-	 * @throws NumberFormatException
-	 *             if the attribute is not a floating-point number
-	 */
-	default OptionalDouble repeat​CountAsDouble() {
-		return attributeAsDouble("repeat​Count");
 	}
 	/**
 	 * Adds boolean HTML attribute {@code required}.
@@ -5460,25 +5460,25 @@ public interface DomAttributes {
 		return attributeAsBoolean("required");
 	}
 	/**
-	 * Sets SVG attribute {@code required​Features}.
+	 * Sets SVG attribute {@code requiredFeatures}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code required​Features} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code requiredFeatures} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement required​Features(String value) {
-		return set("required​Features", value);
+	default DomElement requiredFeatures(String value) {
+		return set("requiredFeatures", value);
 	}
 	/**
-	 * Gets SVG attribute {@code required​Features}.
+	 * Gets SVG attribute {@code requiredFeatures}.
 	 *
-	 * @return value of the {@code required​Features} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code requiredFeatures} attribute or {@code null} if the attribute is missing
 	 */
-	default String required​Features() {
-		return attributeAsString("required​Features");
+	default String requiredFeatures() {
+		return attributeAsString("requiredFeatures");
 	}
 	/**
 	 * Sets SVG attribute {@code restart}.
@@ -6203,94 +6203,94 @@ public interface DomAttributes {
 		return attributeAsInt("span");
 	}
 	/**
-	 * Sets SVG attribute {@code specular​Constant}.
+	 * Sets SVG attribute {@code specularConstant}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code specular​Constant} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code specularConstant} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement specular​Constant(String value) {
-		return set("specular​Constant", value);
+	default DomElement specularConstant(String value) {
+		return set("specularConstant", value);
 	}
 	/**
-	 * Gets SVG attribute {@code specular​Constant}.
+	 * Gets SVG attribute {@code specularConstant}.
 	 *
-	 * @return value of the {@code specular​Constant} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code specularConstant} attribute or {@code null} if the attribute is missing
 	 */
-	default String specular​Constant() {
-		return attributeAsString("specular​Constant");
+	default String specularConstant() {
+		return attributeAsString("specularConstant");
 	}
 	/**
-	 * Sets SVG attribute {@code specular​Constant} to a floating-point value.
+	 * Sets SVG attribute {@code specularConstant} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code specular​Constant} attribute
+	 *            new value of the {@code specularConstant} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement specular​Constant(double value) {
-		return set("specular​Constant", value);
+	default DomElement specularConstant(double value) {
+		return set("specularConstant", value);
 	}
 	/**
-	 * Gets SVG attribute {@code specular​Constant} as a floating-point value.
+	 * Gets SVG attribute {@code specularConstant} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code specular​Constant} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code specularConstant} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble specular​ConstantAsDouble() {
-		return attributeAsDouble("specular​Constant");
+	default OptionalDouble specularConstantAsDouble() {
+		return attributeAsDouble("specularConstant");
 	}
 	/**
-	 * Sets SVG attribute {@code specular​Exponent}.
+	 * Sets SVG attribute {@code specularExponent}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code specular​Exponent} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code specularExponent} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement specular​Exponent(String value) {
-		return set("specular​Exponent", value);
+	default DomElement specularExponent(String value) {
+		return set("specularExponent", value);
 	}
 	/**
-	 * Gets SVG attribute {@code specular​Exponent}.
+	 * Gets SVG attribute {@code specularExponent}.
 	 *
-	 * @return value of the {@code specular​Exponent} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code specularExponent} attribute or {@code null} if the attribute is missing
 	 */
-	default String specular​Exponent() {
-		return attributeAsString("specular​Exponent");
+	default String specularExponent() {
+		return attributeAsString("specularExponent");
 	}
 	/**
-	 * Sets SVG attribute {@code specular​Exponent} to a floating-point value.
+	 * Sets SVG attribute {@code specularExponent} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code specular​Exponent} attribute
+	 *            new value of the {@code specularExponent} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement specular​Exponent(double value) {
-		return set("specular​Exponent", value);
+	default DomElement specularExponent(double value) {
+		return set("specularExponent", value);
 	}
 	/**
-	 * Gets SVG attribute {@code specular​Exponent} as a floating-point value.
+	 * Gets SVG attribute {@code specularExponent} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code specular​Exponent} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code specularExponent} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble specular​ExponentAsDouble() {
-		return attributeAsDouble("specular​Exponent");
+	default OptionalDouble specularExponentAsDouble() {
+		return attributeAsDouble("specularExponent");
 	}
 	/**
 	 * Sets HTML attribute {@code spellcheck}.
@@ -6443,49 +6443,49 @@ public interface DomAttributes {
 		return attributeAsInt("start");
 	}
 	/**
-	 * Sets SVG attribute {@code std​Deviation}.
+	 * Sets SVG attribute {@code stdDeviation}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code std​Deviation} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code stdDeviation} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement std​Deviation(String value) {
-		return set("std​Deviation", value);
+	default DomElement stdDeviation(String value) {
+		return set("stdDeviation", value);
 	}
 	/**
-	 * Gets SVG attribute {@code std​Deviation}.
+	 * Gets SVG attribute {@code stdDeviation}.
 	 *
-	 * @return value of the {@code std​Deviation} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code stdDeviation} attribute or {@code null} if the attribute is missing
 	 */
-	default String std​Deviation() {
-		return attributeAsString("std​Deviation");
+	default String stdDeviation() {
+		return attributeAsString("stdDeviation");
 	}
 	/**
-	 * Sets SVG attribute {@code std​Deviation} to a floating-point value.
+	 * Sets SVG attribute {@code stdDeviation} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code std​Deviation} attribute
+	 *            new value of the {@code stdDeviation} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement std​Deviation(double value) {
-		return set("std​Deviation", value);
+	default DomElement stdDeviation(double value) {
+		return set("stdDeviation", value);
 	}
 	/**
-	 * Gets SVG attribute {@code std​Deviation} as a floating-point value.
+	 * Gets SVG attribute {@code stdDeviation} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code std​Deviation} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code stdDeviation} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble std​DeviationAsDouble() {
-		return attributeAsDouble("std​Deviation");
+	default OptionalDouble stdDeviationAsDouble() {
+		return attributeAsDouble("stdDeviation");
 	}
 	/**
 	 * Sets HTML attribute {@code step}.
@@ -6995,70 +6995,70 @@ public interface DomAttributes {
 		return attributeAsString("style");
 	}
 	/**
-	 * Sets SVG attribute {@code surface​Scale}.
+	 * Sets SVG attribute {@code surfaceScale}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code surface​Scale} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code surfaceScale} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement surface​Scale(String value) {
-		return set("surface​Scale", value);
+	default DomElement surfaceScale(String value) {
+		return set("surfaceScale", value);
 	}
 	/**
-	 * Gets SVG attribute {@code surface​Scale}.
+	 * Gets SVG attribute {@code surfaceScale}.
 	 *
-	 * @return value of the {@code surface​Scale} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code surfaceScale} attribute or {@code null} if the attribute is missing
 	 */
-	default String surface​Scale() {
-		return attributeAsString("surface​Scale");
+	default String surfaceScale() {
+		return attributeAsString("surfaceScale");
 	}
 	/**
-	 * Sets SVG attribute {@code surface​Scale} to a floating-point value.
+	 * Sets SVG attribute {@code surfaceScale} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code surface​Scale} attribute
+	 *            new value of the {@code surfaceScale} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement surface​Scale(double value) {
-		return set("surface​Scale", value);
+	default DomElement surfaceScale(double value) {
+		return set("surfaceScale", value);
 	}
 	/**
-	 * Gets SVG attribute {@code surface​Scale} as a floating-point value.
+	 * Gets SVG attribute {@code surfaceScale} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code surface​Scale} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code surfaceScale} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble surface​ScaleAsDouble() {
-		return attributeAsDouble("surface​Scale");
+	default OptionalDouble surfaceScaleAsDouble() {
+		return attributeAsDouble("surfaceScale");
 	}
 	/**
-	 * Sets SVG attribute {@code system​Language}.
+	 * Sets SVG attribute {@code systemLanguage}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code system​Language} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code systemLanguage} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement system​Language(String value) {
-		return set("system​Language", value);
+	default DomElement systemLanguage(String value) {
+		return set("systemLanguage", value);
 	}
 	/**
-	 * Gets SVG attribute {@code system​Language}.
+	 * Gets SVG attribute {@code systemLanguage}.
 	 *
-	 * @return value of the {@code system​Language} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code systemLanguage} attribute or {@code null} if the attribute is missing
 	 */
-	default String system​Language() {
-		return attributeAsString("system​Language");
+	default String systemLanguage() {
+		return attributeAsString("systemLanguage");
 	}
 	/**
 	 * Sets HTML/SVG attribute {@code tabindex}.
@@ -7280,49 +7280,49 @@ public interface DomAttributes {
 		return attributeAsString("text-rendering");
 	}
 	/**
-	 * Sets SVG attribute {@code text​Length}.
+	 * Sets SVG attribute {@code textLength}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code text​Length} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code textLength} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement text​Length(String value) {
-		return set("text​Length", value);
+	default DomElement textLength(String value) {
+		return set("textLength", value);
 	}
 	/**
-	 * Gets SVG attribute {@code text​Length}.
+	 * Gets SVG attribute {@code textLength}.
 	 *
-	 * @return value of the {@code text​Length} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code textLength} attribute or {@code null} if the attribute is missing
 	 */
-	default String text​Length() {
-		return attributeAsString("text​Length");
+	default String textLength() {
+		return attributeAsString("textLength");
 	}
 	/**
-	 * Sets SVG attribute {@code text​Length} to a floating-point value.
+	 * Sets SVG attribute {@code textLength} to a floating-point value.
 	 *
 	 * @param value
-	 *            new value of the {@code text​Length} attribute
+	 *            new value of the {@code textLength} attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement text​Length(double value) {
-		return set("text​Length", value);
+	default DomElement textLength(double value) {
+		return set("textLength", value);
 	}
 	/**
-	 * Gets SVG attribute {@code text​Length} as a floating-point value.
+	 * Gets SVG attribute {@code textLength} as a floating-point value.
 	 *
 	 * @param value
-	 *            value of the {@code text​Length} attribute or an empty {@link OptionalDouble} if the attribute is missing
+	 *            value of the {@code textLength} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
 	 */
-	default OptionalDouble text​LengthAsDouble() {
-		return attributeAsDouble("text​Length");
+	default OptionalDouble textLengthAsDouble() {
+		return attributeAsDouble("textLength");
 	}
 	/**
 	 * Sets HTML attribute {@code title}.
@@ -8037,25 +8037,25 @@ public interface DomAttributes {
 		return attributeAsDouble("x2");
 	}
 	/**
-	 * Sets SVG attribute {@code xChannel​Selector}.
+	 * Sets SVG attribute {@code xChannelSelector}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code xChannel​Selector} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code xChannelSelector} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement xChannel​Selector(String value) {
-		return set("xChannel​Selector", value);
+	default DomElement xChannelSelector(String value) {
+		return set("xChannelSelector", value);
 	}
 	/**
-	 * Gets SVG attribute {@code xChannel​Selector}.
+	 * Gets SVG attribute {@code xChannelSelector}.
 	 *
-	 * @return value of the {@code xChannel​Selector} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code xChannelSelector} attribute or {@code null} if the attribute is missing
 	 */
-	default String xChannel​Selector() {
-		return attributeAsString("xChannel​Selector");
+	default String xChannelSelector() {
+		return attributeAsString("xChannelSelector");
 	}
 	/**
 	 * Sets SVG attribute {@code y}.
@@ -8193,25 +8193,25 @@ public interface DomAttributes {
 		return attributeAsDouble("y2");
 	}
 	/**
-	 * Sets SVG attribute {@code yChannel​Selector}.
+	 * Sets SVG attribute {@code yChannelSelector}.
 	 * If {@code value} is {@code null}, the attribute is removed.
 	 *
 	 * @param value
-	 *            new value of the {@code yChannel​Selector} attribute or {@code null} to remove the attribute
+	 *            new value of the {@code yChannelSelector} attribute or {@code null} to remove the attribute
 	 * @return {@code this}
 	 * @throws IllegalStateException
 	 *             if the element is frozen
 	 */
-	default DomElement yChannel​Selector(String value) {
-		return set("yChannel​Selector", value);
+	default DomElement yChannelSelector(String value) {
+		return set("yChannelSelector", value);
 	}
 	/**
-	 * Gets SVG attribute {@code yChannel​Selector}.
+	 * Gets SVG attribute {@code yChannelSelector}.
 	 *
-	 * @return value of the {@code yChannel​Selector} attribute or {@code null} if the attribute is missing
+	 * @return value of the {@code yChannelSelector} attribute or {@code null} if the attribute is missing
 	 */
-	default String yChannel​Selector() {
-		return attributeAsString("yChannel​Selector");
+	default String yChannelSelector() {
+		return attributeAsString("yChannelSelector");
 	}
 	/**
 	 * Sets SVG attribute {@code z}.
