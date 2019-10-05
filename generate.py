@@ -1,3 +1,4 @@
+# Part of PushMode: https://pushmode.machinezoo.com
 import os
 import textwrap
 import contextlib

@@ -1,3 +1,4 @@
+// Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.dom;
 
 import java.io.*;

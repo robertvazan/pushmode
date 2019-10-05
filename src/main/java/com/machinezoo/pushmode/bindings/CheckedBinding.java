@@ -1,3 +1,4 @@
+// Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.bindings;
 
 import java.util.function.*;
