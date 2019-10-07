@@ -41,6 +41,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
+			<artifactId>hookless</artifactId>
+			<version>0.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
 			<version>0.1.0</version>
 		</dependency>
@@ -53,6 +58,11 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.10</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
