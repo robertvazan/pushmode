@@ -176,4 +176,27 @@ public final class DomFragment extends DomContainer {
 		super.freeze();
 		return this;
 	}
+	/*
+	 * This is particularly useful for quickly building lists with separators.
+	 * We aren't providing overloads with ellipsis (...) items,
+	 * because this function is most useful for unbounded lists. Ellipsis overload would be used rarely.
+	 * Streams are more likely to be used, but they are easy to convert to iterable via collect(toList()).
+	 * We could define the same function as a non-static method on DomContent,
+	 * which would be used implicitly as a separator, but then we wouldn't have the overload with plain string separator.
+	 */
+	public static DomFragment join(DomContent separator, Iterable<? extends DomContent> items) {
+		DomFragment result = new DomFragment();
+		boolean first = true;
+		for (DomContent item : items) {
+			if (first)
+				first = false;
+			else
+				result.add(separator);
+			result.add(item);
+		}
+		return result;
+	}
+	public static DomFragment join(String separator, Iterable<? extends DomContent> items) {
+		return join(new DomText(separator), items);
+	}
 }
