@@ -869,8 +869,6 @@ def attributes_source():
                 /**
                  * Gets ''' + category + ''' attribute {@code ''' + attribute + '''} as an integer value.
                  *
-                 * @param value
-                 *            value of the {@code ''' + attribute + '''} attribute or an empty {@link OptionalInt} if the attribute is missing
                  * @return {@code this}
                  * @throws NumberFormatException
                  *             if the attribute is not an integer
@@ -896,8 +894,6 @@ def attributes_source():
                 /**
                  * Gets ''' + category + ''' attribute {@code ''' + attribute + '''} as a floating-point value.
                  *
-                 * @param value
-                 *            value of the {@code ''' + attribute + '''} attribute or an empty {@link OptionalDouble} if the attribute is missing
                  * @return {@code this}
                  * @throws NumberFormatException
                  *             if the attribute is not a floating-point number

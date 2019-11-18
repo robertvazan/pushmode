@@ -303,8 +303,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code amplitude} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code amplitude} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -525,8 +523,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code azimuth} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code azimuth} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -570,8 +566,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code baseFrequency} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code baseFrequency} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -615,8 +609,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code baseline-shift} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code baseline-shift} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -681,8 +673,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code bias} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code bias} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1009,8 +999,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code cols} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code cols} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -1054,8 +1042,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code colspan} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code colspan} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -1256,8 +1242,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code cx} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code cx} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1301,8 +1285,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code cy} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code cy} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1471,8 +1453,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code diffuseConstant} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code diffuseConstant} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1610,8 +1590,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code divisor} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code divisor} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1770,8 +1748,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code dx} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code dx} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1815,8 +1791,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code dy} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code dy} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -1881,8 +1855,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code elevation} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code elevation} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2010,8 +1982,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code fill-opacity} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code fill-opacity} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2139,8 +2109,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code flood-opacity} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code flood-opacity} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2226,8 +2194,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code font-size-adjust} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code font-size-adjust} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2313,8 +2279,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code font-weight} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code font-weight} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -2494,8 +2458,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code fr} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code fr} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2560,8 +2522,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code fx} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code fx} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2605,8 +2565,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code fy} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code fy} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2713,8 +2671,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code height} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code height} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -2737,8 +2693,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code height} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code height} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -2813,8 +2767,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code high} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code high} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3078,8 +3030,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code k1} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code k1} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3123,8 +3073,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code k2} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code k2} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3168,8 +3116,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code k3} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code k3} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3213,8 +3159,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code k4} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code k4} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3279,8 +3223,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code kernelUnitLength} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code kernelUnitLength} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3324,8 +3266,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code kerning} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code kerning} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3495,8 +3435,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code letter-spacing} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code letter-spacing} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3561,8 +3499,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code limitingConeAngle} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code limitingConeAngle} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3679,8 +3615,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code low} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code low} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3787,8 +3721,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code markerHeight} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code markerHeight} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3853,8 +3785,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code markerWidth} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code markerWidth} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -3961,8 +3891,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code max} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code max} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4006,8 +3934,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code maxlength} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code maxlength} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -4093,8 +4019,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code min} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code min} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4138,8 +4062,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code minlength} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code minlength} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -4318,8 +4240,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code numOctaves} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code numOctaves} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -4363,8 +4283,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code opacity} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code opacity} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4460,8 +4378,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code optimum} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code optimum} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4505,8 +4421,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code order} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code order} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -4571,8 +4485,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code overline-position} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code overline-position} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4616,8 +4528,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code overline-thickness} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code overline-thickness} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4682,8 +4592,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code pathLength} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code pathLength} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4905,8 +4813,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code pointsAtX} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code pointsAtX} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4950,8 +4856,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code pointsAtY} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code pointsAtY} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -4995,8 +4899,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code pointsAtZ} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code pointsAtZ} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5145,8 +5047,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code r} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code r} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5211,8 +5111,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code radius} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code radius} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5287,8 +5185,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code refX} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code refX} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5332,8 +5228,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code refy} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code refy} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5398,8 +5292,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code repeatCount} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code repeatCount} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5610,8 +5502,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code rows} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code rows} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -5655,8 +5545,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code rowspan} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code rowspan} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -5700,8 +5588,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code rx} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code rx} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5745,8 +5631,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code ry} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code ry} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5811,8 +5695,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code scale} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code scale} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5877,8 +5759,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code seed} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code seed} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -5974,8 +5854,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code selectionEnd} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code selectionEnd} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -6019,8 +5897,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code selectionStart} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code selectionStart} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -6106,8 +5982,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code size} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code size} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -6193,8 +6067,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code span} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code span} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -6238,8 +6110,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code specularConstant} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code specularConstant} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6283,8 +6153,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code specularExponent} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code specularExponent} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6433,8 +6301,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code start} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code start} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -6478,8 +6344,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stdDeviation} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stdDeviation} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6523,8 +6387,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code step} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code step} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6610,8 +6472,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stop-opacity} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stop-opacity} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6655,8 +6515,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code strikethrough-position} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code strikethrough-position} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6700,8 +6558,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code strikethrough-thickness} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code strikethrough-thickness} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6787,8 +6643,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stroke-dashoffset} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stroke-dashoffset} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6874,8 +6728,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stroke-miterlimit} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stroke-miterlimit} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6919,8 +6771,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stroke-opacity} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stroke-opacity} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -6964,8 +6814,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code stroke-width} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code stroke-width} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7030,8 +6878,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code surfaceScale} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code surfaceScale} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7096,8 +6942,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code tabindex} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code tabindex} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -7162,8 +7006,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code targetX} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code targetX} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7207,8 +7049,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code targetY} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code targetY} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7315,8 +7155,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code textLength} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code textLength} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7475,8 +7313,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code underline-position} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code underline-position} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7520,8 +7356,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code underline-thickness} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code underline-thickness} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7586,8 +7420,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code value} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code value} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7736,8 +7568,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML attribute {@code volume} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code volume} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7781,8 +7611,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code width} as an integer value.
 	 *
-	 * @param value
-	 *            value of the {@code width} attribute or an empty {@link OptionalInt} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not an integer
@@ -7805,8 +7633,6 @@ public interface DomAttributes {
 	/**
 	 * Gets HTML/SVG attribute {@code width} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code width} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7850,8 +7676,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code word-spacing} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code word-spacing} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7937,8 +7761,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code x} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code x} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -7982,8 +7804,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code x1} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code x1} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -8027,8 +7847,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code x2} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code x2} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -8093,8 +7911,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code y} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code y} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -8138,8 +7954,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code y1} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code y1} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -8183,8 +7997,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code y2} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code y2} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
@@ -8249,8 +8061,6 @@ public interface DomAttributes {
 	/**
 	 * Gets SVG attribute {@code z} as a floating-point value.
 	 *
-	 * @param value
-	 *            value of the {@code z} attribute or an empty {@link OptionalDouble} if the attribute is missing
 	 * @return {@code this}
 	 * @throws NumberFormatException
 	 *             if the attribute is not a floating-point number
