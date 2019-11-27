@@ -19,25 +19,6 @@ public class DomFormatter {
 		return buffer.toString();
 	}
 	/*
-	 * Instead of numerous configuration options,
-	 * we only offer a few named constructors that cover the common cases.
-	 */
-	private DomFormatter() {
-	}
-	public static DomFormatter html() {
-		DomFormatter formatter =  new DomFormatter();
-		formatter.buffer.append("<!DOCTYPE html>\n");
-		return formatter;
-	}
-	public static DomFormatter svg() {
-		DomFormatter formatter =  new DomFormatter();
-		formatter.extra.add(new DomAttribute("xmlns", "http://www.w3.org/2000/svg"));
-		return formatter;
-	}
-	public static DomFormatter fragment() {
-		return new DomFormatter();
-	}
-	/*
 	 * Page ID is attached to the output by serializer.
 	 * Application doesn't have to worry about attaching it to the page.
 	 * Page ID is not present in diffs. It's only in the initial HTTP response.
@@ -47,6 +28,27 @@ public class DomFormatter {
 	public DomFormatter pageId(String pageId) {
 		extra.add(new DomAttribute("data-pushmode-stream", pageId));
 		return this;
+	}
+	/*
+	 * Instead of numerous configuration options,
+	 * we only offer a few named constructors that cover the common cases.
+	 */
+	private boolean isXml;
+	private DomFormatter() {
+	}
+	public static DomFormatter html() {
+		DomFormatter formatter = new DomFormatter();
+		formatter.buffer.append("<!DOCTYPE html>\n");
+		return formatter;
+	}
+	public static DomFormatter svg() {
+		DomFormatter formatter = new DomFormatter();
+		formatter.extra.add(new DomAttribute("xmlns", "http://www.w3.org/2000/svg"));
+		formatter.isXml = true;
+		return formatter;
+	}
+	public static DomFormatter fragment() {
+		return new DomFormatter();
 	}
 	/*
 	 * Formatting method is fluent instead of returning the output string.
@@ -108,12 +110,23 @@ public class DomFormatter {
 				attribute(attributes[i], attributes[i + 1]);
 			}
 		}
-		buffer.append('>');
-		if (!isVoid(element.tagname())) {
-			children(element);
-			buffer.append("</");
-			buffer.append(element.tagname());
+		if (isXml) {
+			if (hasChildren(element)) {
+				buffer.append(">");
+				children(element);
+				buffer.append("</");
+				buffer.append(element.tagname());
+				buffer.append('>');
+			} else
+				buffer.append("/>");
+		} else {
 			buffer.append('>');
+			if (!isVoid(element.tagname())) {
+				children(element);
+				buffer.append("</");
+				buffer.append(element.tagname());
+				buffer.append('>');
+			}
 		}
 	}
 	private boolean isVoid(String tagname) {
@@ -185,6 +198,10 @@ public class DomFormatter {
 			}
 			buffer.append(single ? '\'' : '\"');
 		}
+	}
+	private boolean hasChildren(DomContainer container) {
+		DomContent[] children = container.rawChildren();
+		return children != null && children.length > 0 && children[0] != null;
 	}
 	private void children(DomContainer container) {
 		DomContent[] children = container.rawChildren();
