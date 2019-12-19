@@ -16,7 +16,15 @@ var PushMode = PushMode || new function() {
 		var delay = 10;
 		
 		function reload() {
-			location.replace(location.href);
+			/*
+			 * The downside of location.reload() is that it triggers server roundtrip
+			 * not only for the page itself but also for all resources referenced by the page.
+			 * We could call location.replace(location.href), which uses cached resources,
+			 * but that one causes the page to jump to the top and it doesn't work with fragment IDs at all.
+			 * If we get to the point where we have to do a refresh, it is better to be correct than fast.
+			 * Applications should deal with the extra resource requests by using HTTP/2 and ETag/304.
+			 */
+			location.reload();
 		}
 		
 		function backoff() {
