@@ -29,6 +29,8 @@ import java.util.stream.*;
  * If DOM tree modification is needed, for example to expand templates,
  * apply DOM tree filters, or to import external content,
  * the best approach is to build new DOM tree with desired changes applied and discard the original DOM tree.
+ * The only mutating method we support is {@code children().clear()},
+ * so that contents of this {@code DomContainer} can be replaced without replacing the whole object.
  * <p>
  * Since using the high-level builder and query API might be too much overhead in some cases,
  * a low-level raw access API is provided too. It is application's responsibility to use the raw API correctly.
@@ -271,8 +273,9 @@ public abstract class DomContainer extends DomContent {
 	 * 
 	 * Child list is exposed as a live view.
 	 * While returning a copy would be easier to implement, exposing a live view has several advantages.
-	 * It lets use expose child count in O(1) as .children().size() without having to add another method to DomContainer.
+	 * It lets us expose child count in O(1) as .children().size() without having to add another method to DomContainer.
 	 * It supports O(1) indexed access to the child list when the application needs only one child, for example the last one.
+	 * It also lets us support clear() as the only mutating operation on the child list without extra method on this class.
 	 * And it's likely more performant than constructing new ArrayList.
 	 * 
 	 * The live view object is constructed anew upon every call.
@@ -283,7 +286,7 @@ public abstract class DomContainer extends DomContent {
 	 * Lists all children in this element or fragment.
 	 * The list is a live view of the internal representation of the child list.
 	 * It will reflect changes made through other methods of this class.
-	 * The returned list itself is unmodifiable.
+	 * The returned list itself is unmodifiable except for {@link List#clear()}.
 	 * <p>
 	 * All methods of the returned {@link List} have time complexity like methods of {@link ArrayList}
 	 * except {@link List#subList(int, int)}, which is currently implemented as returning copy of the sublist rather than a view.
@@ -353,7 +356,8 @@ public abstract class DomContainer extends DomContent {
 			throw new UnsupportedOperationException();
 		}
 		@Override public void clear() {
-			throw new UnsupportedOperationException();
+			size = 0;
+			children = null;
 		}
 		@Override public boolean contains(Object object) {
 			return new ArrayList<>(this).contains(object);
