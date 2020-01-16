@@ -427,7 +427,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		return this;
 	}
 	/**
-	 * Adds all nodes in an {@link Iterable} to this element.
+	 * Adds all nodes in a {@link Collection} to this element.
 	 * 
 	 * @param children
 	 *            {@inheritDoc}
@@ -436,7 +436,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *             if this element is frozen
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomElement add(Iterable<C> children) {
+	@Override public <C extends DomContent> DomElement add(Collection<C> children) {
 		super.add(children);
 		return this;
 	}

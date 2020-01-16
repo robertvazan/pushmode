@@ -187,13 +187,17 @@ public abstract class DomContainer extends DomContent {
 		return this;
 	}
 	/*
-	 * We will define two higher level methods for iterables and streams.
+	 * We will define two higher level methods for collections and streams.
 	 * Array overload could be implemented too, but that's a rare use case that is usually a mistake anyway.
 	 * Collections should be used by applications as a superior alternative to arrays whenever possible.
 	 * If array really needs to be added, it is easy to wrap it with Arrays.asList().
+	 * 
+	 * We don't support Iterable, because it is hard to find useful Iterable that is not a Collection.
+	 * Since people implement Iterable on things that are not really iterable (for example streams, hello StreamEx),
+	 * we would be just asking for ambiguous method call errors here.
 	 */
 	/**
-	 * Adds all nodes in an {@link Iterable} to the list of children.
+	 * Adds all nodes in a {@link Collection} to the list of children.
 	 * Fragments will be inlined, {@code null}s ignored, and text concatenated.
 	 * 
 	 * @param children
@@ -203,7 +207,7 @@ public abstract class DomContainer extends DomContent {
 	 *             if this element or fragment is frozen
 	 * @see #add(DomContent)
 	 */
-	public <C extends DomContent> DomContainer add(Iterable<C> children) {
+	public <C extends DomContent> DomContainer add(Collection<C> children) {
 		if (children != null)
 			for (C child : children)
 				add(child);

@@ -1,6 +1,7 @@
 // Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.dom;
 
+import java.util.*;
 import java.util.stream.*;
 
 /**
@@ -121,7 +122,7 @@ public final class DomFragment extends DomContainer {
 		return this;
 	}
 	/**
-	 * Adds all nodes in an {@link Iterable} to this fragment.
+	 * Adds all nodes in a {@link Collection} to this fragment.
 	 * Fragments will be inlined, {@code null}s ignored, and text concatenated.
 	 * 
 	 * @param children
@@ -131,7 +132,7 @@ public final class DomFragment extends DomContainer {
 	 *             {@inheritDoc}
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomFragment add(Iterable<C> children) {
+	@Override public <C extends DomContent> DomFragment add(Collection<C> children) {
 		super.add(children);
 		return this;
 	}
