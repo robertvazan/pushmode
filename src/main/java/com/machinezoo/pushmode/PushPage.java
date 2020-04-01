@@ -125,11 +125,10 @@ public abstract class PushPage {
 		.parent(this)
 		.tag("role", "pollSeq")
 		.target();
-	private final ReactiveLoop<Void> loop = OwnerTrace
-		.of(new ReactiveLoop<Void>()
-			.body(this::run)
+	private final ReactiveThread loop = OwnerTrace
+		.of(new ReactiveThread(this::run)
 			.executor(executor)
-			.weak(true))
+			.daemon(true))
 		.parent(this)
 		.target();
 	private final ReactiveVariable<PageFrame> output = OwnerTrace.of(new ReactiveVariable<>(new PageFrame(this)))
