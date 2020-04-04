@@ -138,7 +138,6 @@ public abstract class PushPage {
 		.target();
 	public void start() {
 		loop.start();
-		generator.start();
 	}
 	void handle(long inputSeq, List<ListenerMessage> messages) {
 		executor.execute(() -> {
@@ -188,29 +187,51 @@ public abstract class PushPage {
 			}
 		}
 	}
-	private final ReactiveGenerator<PageFrame> generator = OwnerTrace
-		.of(new ReactiveGenerator<PageFrame>(this::refresh)
-			.executor(executor))
+	private final ReactiveStateMachine<PageFrame> generator = OwnerTrace
+		.of(ReactiveStateMachine.supply(this::refresh))
 		.parent(this)
 		.target();
-	private final ReactiveVariable<Long> generatorSeq = OwnerTrace.of(new ReactiveVariable<>(0L))
+	private final ReactiveVariable<Long> generatorSeq = OwnerTrace.of(new ReactiveVariable<>(-1L))
 		.parent(this)
 		.tag("role", "generatorSeq")
 		.target();
 	private void run() {
 		try {
 			PageFrame previous = output.get();
+			/*
+			 * Don't do anything unless we have pending frame request from the client.
+			 */
 			if (previous.outputSeq() + 1 == pollSeq.get()) {
 				/*
 				 * When client asks for new frame, it's a confirmation that it has consumed the previous frame.
-				 * We can thus remove that frame from the generator to allow new frame to be generated.
+				 * We can thus let the generator advance, but only if it has been already invalidated.
 				 */
-				if (generatorSeq.get() < pollSeq.get() && generator.peek() != null) {
-					generator.remove();
-					generatorSeq.set(generatorSeq.get() + 1);
+				if (generatorSeq.get() < pollSeq.get() && !generator.valid()) {
+					generator.advance();
+					ReactiveValue<PageFrame> output = generator.output();
+					/*
+					 * Frame production should never fail. Tolerate blocking exception of course.
+					 */
+					if (!output.blocking() && output.exception() != null)
+						Exceptions.log(logger).handle(output.exception());
+					/*
+					 * The generator has now produced new frame, but we will accept it only if it doesn't block and it is not an exception.
+					 * Otherwise we will just wait for the generator to be invalidated and we will advance it again.
+					 * 
+					 * Filtering of exceptions means that we will block reactive servlet indefinitely, hoping things will get better later.
+					 * TODO: Ideally, we should propagate the exception through page API,
+					 * so that 500 response can be returned if this happens to a poster frame
+					 * and so that tests can easily observe unexpected exceptions.
+					 */
+					if (!output.blocking() && output.exception() == null)
+						generatorSeq.set(generatorSeq.get() + 1);
 				}
-				PageFrame next = generator.peek();
-				if ((long)generatorSeq.get() == (long)pollSeq.get() && next != null) {
+				/*
+				 * If the generator has a frame ready, send it. Ready means it has the right sequence, it is not blocking, and it is not an error.
+				 * We don't care whether it was already invalidated or not. We will take stale frame if needed.
+				 */
+				if ((long)generatorSeq.get() == (long)pollSeq.get() && !generator.output().blocking() && generator.output().exception() == null) {
+					PageFrame next = generator.output().get();
 					if (previous.outputSeq() < 0) {
 						elementIds.seed(next.document());
 						next.outputSeq(0);
@@ -230,14 +251,14 @@ public abstract class PushPage {
 								.outputSeq(previous.outputSeq())
 								.patch(previous.patch());
 							/*
-							 * If the frame is not being sent to the client, consume it here.
-							 * This forces new frame to be generated once there are any new changes.
-							 * We aren't advancing any sequences, because nothing happened from client's point of view.
+							 * If the frame is not being sent to the client, force production of new frame.
+							 * We aren't advancing any client sequences, because nothing happened from client's point of view.
 							 */
-							generator.remove();
+							generatorSeq.set(generatorSeq.get() - 1);
 						}
 					}
 					output.set(next);
+					poster.set(false);
 				}
 			}
 		} catch (Throwable e) {
@@ -248,33 +269,17 @@ public abstract class PushPage {
 		return inputSeq.get();
 	}
 	private static final Timer renderTime = Metrics.timer("pushmode.rendering");
-	PageFrame refresh() {
+	private PageFrame refresh() {
 		Timer.Sample sample = Timer.start(Clock.SYSTEM);
-		DomElement document;
-		try {
-			/*
-			 * We are freezing the DOM tree here in order to simplify diffing.
-			 * Diffing can then assume all arrays have been compacted.
-			 * This is probably less efficient than checking for null terminators in diff code.
-			 * We might later switch to diffing unfrozen trees and suffer the cost of null checking instead.
-			 */
-			document = document().freeze();
-			document = poster() ? document.toPoster() : document;
-		} catch (Throwable e) {
-			if (!CurrentReactiveScope.blocked())
-				Exceptions.log(logger).handle(e);
-			/*
-			 * We will block indefinitely in case of exception, hoping things will get better later.
-			 * Ideally, we should propagate the exception (while still blocking) through page API,
-			 * so that 500 response can be returned if this happens to a poster frame
-			 * and so that tests can easily observe unexpected exceptions.
-			 */
-			CurrentReactiveScope.block();
-			document = Html.html().freeze();
-		}
+		/*
+		 * We are freezing the DOM tree here in order to simplify diffing.
+		 * Diffing can then assume all arrays have been compacted.
+		 * This is probably less efficient than checking for null terminators in diff code.
+		 * We might later switch to diffing unfrozen trees and suffer the cost of null checking instead.
+		 */
+		DomElement document = document().freeze();
+		document = poster() ? document.toPoster() : document;
 		sample.stop(renderTime);
-		if (!CurrentReactiveScope.blocked() && poster())
-			poster.set(false);
 		return new PageFrame(this)
 			.document(document)
 			.inputSeq(inputSeq());
