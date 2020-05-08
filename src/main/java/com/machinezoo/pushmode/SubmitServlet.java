@@ -39,17 +39,14 @@ public class SubmitServlet extends ReactiveServlet {
 			reloadCounter.increment();
 			return new ReactiveServletResponse().status(HttpServletResponse.SC_RESET_CONTENT);
 		}
-		try {
+		Exceptions.log(logger).passing().run(() -> {
 			long inputSeq = json.get("i").asLong();
 			JsonNode events = json.get("e");
 			List<ListenerMessage> messages = new ArrayList<>();
 			for (int i = 0; i < events.size(); ++i)
 				messages.add(ListenerMessage.parse(events.get(i)));
 			page.handle(inputSeq, messages);
-		} catch (Throwable e) {
-			Exceptions.log(logger).handle(e);
-			throw e;
-		}
+		});
 		ReactiveServletResponse response = new ReactiveServletResponse();
 		response.headers().put("Content-Type", "application/json; charset=utf-8");
 		response.data(ByteBuffer.wrap("{}".getBytes(StandardCharsets.UTF_8)));
