@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 import org.slf4j.*;
 import com.machinezoo.hookless.*;
 import com.machinezoo.hookless.servlets.*;
-import com.machinezoo.hookless.utils.*;
+import com.machinezoo.hookless.util.*;
 import com.machinezoo.noexception.*;
 import com.machinezoo.pushmode.dom.*;
 import com.machinezoo.pushmode.internal.diffing.*;
