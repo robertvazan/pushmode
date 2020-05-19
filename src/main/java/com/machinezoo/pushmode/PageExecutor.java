@@ -54,10 +54,10 @@ class PageExecutor implements ExecutorService {
 		if (!executing && !queue.isEmpty()) {
 			executing = true;
 			Runnable task = queue.remove();
-			ReactiveExecutor.instance().execute(() -> {
+			ReactiveExecutor.common().execute(() -> {
 				current.set(this);
 				Exceptions.log(logger).run(task);
-				current.set(null);
+				current.remove();
 				synchronized (this) {
 					executing = false;
 					schedule();
