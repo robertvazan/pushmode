@@ -13,23 +13,23 @@
 
 	<licenses>
 		<license>
-			<name>The Apache License, Version 2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<name>Apache License 2.0</name>
+			<url>https://github.com/robertvazan/pushmode/blob/master/LICENSE</url>
 		</license>
 	</licenses>
 
 	<developers>
 		<developer>
 			<name>Robert Važan</name>
-			<email>robvcode@gmail.com</email>
+			<email>robert.vazan@protonmail.com</email>
 			<url>https://robert.machinezoo.com/</url>
 		</developer>
 	</developers>
 
 	<scm>
-		<connection>scm:git:https://bitbucket.org/robertvazan/pushmode</connection>
-		<developerConnection>scm:git:https://bitbucket.org/robertvazan/pushmode</developerConnection>
-		<url>https://bitbucket.org/robertvazan/pushmode</url>
+		<connection>scm:git:https://github.com/robertvazan/pushmode.git</connection>
+		<developerConnection>scm:git:https://github.com/robertvazan/pushmode.git</developerConnection>
+		<url>https://github.com/robertvazan/pushmode</url>
 	</scm>
 
 	<properties>
@@ -78,6 +78,14 @@
 	</dependencies>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
