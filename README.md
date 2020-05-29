@@ -6,5 +6,5 @@ PushMode is a server-side Java library that streams web app's HTML output down t
 * Download: see [Website](https://pushmode.machinezoo.com/)
 * Sources: [GitHub](https://github.com/robertvazan/pushmode), [Bitbucket](https://bitbucket.org/robertvazan/pushmode)
 * Issues: [GitHub](https://github.com/robertvazan/pushmode/issues), [Bitbucket](https://bitbucket.org/robertvazan/pushmode/issues)
-* License: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+* License: [Apache License 2.0](LICENSE)
 
