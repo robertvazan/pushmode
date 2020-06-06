@@ -134,7 +134,7 @@ public abstract class DomContainer extends DomContent {
 	 * @throws IllegalStateException
 	 *             if this element or fragment is frozen
 	 * @see #add(String)
-	 * @see #add(Iterable)
+	 * @see #add(Collection)
 	 * @see #add(Stream)
 	 */
 	public DomContainer add(DomContent child) {

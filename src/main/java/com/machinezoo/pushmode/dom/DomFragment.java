@@ -114,7 +114,7 @@ public final class DomFragment extends DomContainer {
 	 * @throws IllegalStateException
 	 *             {@inheritDoc}
 	 * @see #add(String)
-	 * @see #add(Iterable)
+	 * @see #add(Collection)
 	 * @see #add(Stream)
 	 */
 	@Override public DomFragment add(DomContent child) {

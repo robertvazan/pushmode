@@ -8,6 +8,7 @@ import java.util.stream.*;
 import org.w3c.dom.*;
 import org.w3c.dom.Node;
 import com.machinezoo.noexception.*;
+import com.machinezoo.pushmode.*;
 import com.machinezoo.pushmode.bindings.*;
 import com.machinezoo.pushmode.events.*;
 

@@ -23,21 +23,23 @@ import io.micrometer.core.instrument.Timer;
  * The recommended practice is to define one derived class for every distinct page on the site.
  * It is often desirable to create one or more "master" pages and then derive specialized pages from them.
  * Every derived class must at the very minimum define {@link #document()} method.
- * 
- * @x.lifecycle Whenever the user visits some page, corresponding {@link PushPage} instance is created.
- *              Instances of {@link PushPage} live for as long as the user keeps the page open (i.e. while keepalive messages keep coming)
- *              and some time after that to account for temporary connection loss.
- * @x.threads Every {@link PushPage} has an associated {@link PageExecutor} that can be obtained from {@link #executor()} method.
- *            All page renders (executions of {@link PushPage#document()}), DOM events, and DOM bindings are scheduled on the {@link PageExecutor}.
+ * <p>
+ * Whenever the user visits some page, corresponding {@link PushPage} instance is created.
+ * Instances of {@link PushPage} live for as long as the user keeps the page open (i.e. while keepalive messages keep coming)
+ * and some time after that to account for temporary connection loss.
+ * <p>
+ * Every {@link PushPage} has an associated {@link PageExecutor} that can be obtained from {@link #executor()} method.
+ * All page renders (executions of {@link PushPage#document()}), DOM events, and DOM bindings are scheduled on the {@link PageExecutor}.
  */
 public abstract class PushPage {
 	private static final Logger logger = LoggerFactory.getLogger(PushPage.class);
 	private ReactiveServletRequest request;
 	/**
 	 * Initial request that opened this page.
+	 * <p>
+	 * This method only reads immutable data.
 	 * 
 	 * @return Page's initial HTTP request.
-	 * @x.threads This method only reads immutable data.
 	 */
 	public ReactiveServletRequest request() {
 		return request;
@@ -45,9 +47,10 @@ public abstract class PushPage {
 	private final String pageId;
 	/**
 	 * Globally unique page ID. Page IDs are produced by secure cryptographic random number generator. They never repeat.
+	 * <p>
+	 * This method only reads immutable data.
 	 * 
 	 * @return Page ID as a string matching regex [a-zA-Z0-9]+.
-	 * @x.threads This method only reads immutable data.
 	 */
 	public String pageId() {
 		return pageId;
@@ -56,9 +59,10 @@ public abstract class PushPage {
 	private final ExecutorService executor = new PageExecutor(this);
 	/**
 	 * Page's event loop. All page renders and all DOM events and bindings run in this event loop.
+	 * <p>
+	 * This method only reads immutable data.
 	 * 
 	 * @return Page's event loop.
-	 * @x.threads This method only reads immutable data.
 	 */
 	public ExecutorService executor() {
 		return executor;
@@ -66,9 +70,11 @@ public abstract class PushPage {
 	/**
 	 * Renders the page, i.e. generates DOM tree of the page.
 	 * Override this method to define HTML content of the page.
-	 *
-	 * @x.reactivity This method is called as part of page's reactive computation, i.e. its dependencies are tracked and it is re-run every time its dependencies change.
-	 * @x.threads This method is run by page's {@link #executor()}.
+	 * <p>
+	 * This method is called as part of page's reactive computation, i.e. its dependencies are tracked and it is re-run every time its dependencies change.
+	 * <p>
+	 * This method is run by page's {@link #executor()}.
+	 * 
 	 * @return Page's DOM tree with {@code <html>} root tag.
 	 */
 	public abstract DomElement document();
@@ -106,10 +112,12 @@ public abstract class PushPage {
 	 * <p>
 	 * Application code can call this method from within {@link PushPage#document()} method.
 	 * It is useful for rendering slightly different content in the poster frame, perhaps to deal with bots or to enable events in a more controlled fashion.
+	 * <p>
+	 * This method accesses reactive data. It will cause reactive computations to re-evaluate when the reactive data changes.
+	 * <p>
+	 * This method is safe to call from any thread.
 	 * 
 	 * @return True if rendering poster frame.
-	 * @x.reactivity This method accesses reactive data. It will cause reactive computations to re-evaluate when the reactive data changes.
-	 * @x.threads This method is safe to call from any thread.
 	 */
 	public boolean poster() {
 		return poster.get();
