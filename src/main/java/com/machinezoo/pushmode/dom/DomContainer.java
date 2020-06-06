@@ -200,6 +200,8 @@ public abstract class DomContainer extends DomContent {
 	 * Adds all nodes in a {@link Collection} to the list of children.
 	 * Fragments will be inlined, {@code null}s ignored, and text concatenated.
 	 * 
+	 * @param <C>
+	 *            item type
 	 * @param children
 	 *            collection of child nodes to add (ignored if {@code null})
 	 * @return {@code this}
@@ -217,6 +219,8 @@ public abstract class DomContainer extends DomContent {
 	 * Adds all nodes in a {@link Stream} to the list of children.
 	 * Fragments will be inlined, {@code null}s ignored, and text concatenated.
 	 * 
+	 * @param <C>
+	 *            item type
 	 * @param children
 	 *            {@link Stream} of child nodes to add (ignored if {@code null})
 	 * @return {@code this}
