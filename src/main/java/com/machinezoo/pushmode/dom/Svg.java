@@ -8,641 +8,641 @@ package com.machinezoo.pushmode.dom;
  */
 public abstract class Svg {
 	/**
-	 * Creates new {@code <a>} element.
+	 * Creates new <code>&lt;a&gt;</code> element.
 	 *
-	 * @return new {@code <a>} element
+	 * @return new <code>&lt;a&gt;</code> element
 	 */
 	public static DomElement a() {
 		return new DomElement("a");
 	}
 	/**
-	 * Creates new {@code <altGlyph>} element.
+	 * Creates new <code>&lt;altGlyph&gt;</code> element.
 	 *
-	 * @return new {@code <altGlyph>} element
+	 * @return new <code>&lt;altGlyph&gt;</code> element
 	 */
 	public static DomElement altGlyph() {
 		return new DomElement("altGlyph");
 	}
 	/**
-	 * Creates new {@code <altGlyphDef>} element.
+	 * Creates new <code>&lt;altGlyphDef&gt;</code> element.
 	 *
-	 * @return new {@code <altGlyphDef>} element
+	 * @return new <code>&lt;altGlyphDef&gt;</code> element
 	 */
 	public static DomElement altGlyphDef() {
 		return new DomElement("altGlyphDef");
 	}
 	/**
-	 * Creates new {@code <altGlyphItem>} element.
+	 * Creates new <code>&lt;altGlyphItem&gt;</code> element.
 	 *
-	 * @return new {@code <altGlyphItem>} element
+	 * @return new <code>&lt;altGlyphItem&gt;</code> element
 	 */
 	public static DomElement altGlyphItem() {
 		return new DomElement("altGlyphItem");
 	}
 	/**
-	 * Creates new {@code <animate>} element.
+	 * Creates new <code>&lt;animate&gt;</code> element.
 	 *
-	 * @return new {@code <animate>} element
+	 * @return new <code>&lt;animate&gt;</code> element
 	 */
 	public static DomElement animate() {
 		return new DomElement("animate");
 	}
 	/**
-	 * Creates new {@code <animateColor>} element.
+	 * Creates new <code>&lt;animateColor&gt;</code> element.
 	 *
-	 * @return new {@code <animateColor>} element
+	 * @return new <code>&lt;animateColor&gt;</code> element
 	 */
 	public static DomElement animateColor() {
 		return new DomElement("animateColor");
 	}
 	/**
-	 * Creates new {@code <animateMotion>} element.
+	 * Creates new <code>&lt;animateMotion&gt;</code> element.
 	 *
-	 * @return new {@code <animateMotion>} element
+	 * @return new <code>&lt;animateMotion&gt;</code> element
 	 */
 	public static DomElement animateMotion() {
 		return new DomElement("animateMotion");
 	}
 	/**
-	 * Creates new {@code <animateTransform>} element.
+	 * Creates new <code>&lt;animateTransform&gt;</code> element.
 	 *
-	 * @return new {@code <animateTransform>} element
+	 * @return new <code>&lt;animateTransform&gt;</code> element
 	 */
 	public static DomElement animateTransform() {
 		return new DomElement("animateTransform");
 	}
 	/**
-	 * Creates new {@code <circle>} element.
+	 * Creates new <code>&lt;circle&gt;</code> element.
 	 *
-	 * @return new {@code <circle>} element
+	 * @return new <code>&lt;circle&gt;</code> element
 	 */
 	public static DomElement circle() {
 		return new DomElement("circle");
 	}
 	/**
-	 * Creates new {@code <clipPath>} element.
+	 * Creates new <code>&lt;clipPath&gt;</code> element.
 	 *
-	 * @return new {@code <clipPath>} element
+	 * @return new <code>&lt;clipPath&gt;</code> element
 	 */
 	public static DomElement clipPath() {
 		return new DomElement("clipPath");
 	}
 	/**
-	 * Creates new {@code <color-profile>} element.
+	 * Creates new <code>&lt;color-profile&gt;</code> element.
 	 *
-	 * @return new {@code <color-profile>} element
+	 * @return new <code>&lt;color-profile&gt;</code> element
 	 */
 	public static DomElement colorProfile() {
 		return new DomElement("color-profile");
 	}
 	/**
-	 * Creates new {@code <cursor>} element.
+	 * Creates new <code>&lt;cursor&gt;</code> element.
 	 *
-	 * @return new {@code <cursor>} element
+	 * @return new <code>&lt;cursor&gt;</code> element
 	 */
 	public static DomElement cursor() {
 		return new DomElement("cursor");
 	}
 	/**
-	 * Creates new {@code <defs>} element.
+	 * Creates new <code>&lt;defs&gt;</code> element.
 	 *
-	 * @return new {@code <defs>} element
+	 * @return new <code>&lt;defs&gt;</code> element
 	 */
 	public static DomElement defs() {
 		return new DomElement("defs");
 	}
 	/**
-	 * Creates new {@code <desc>} element.
+	 * Creates new <code>&lt;desc&gt;</code> element.
 	 *
-	 * @return new {@code <desc>} element
+	 * @return new <code>&lt;desc&gt;</code> element
 	 */
 	public static DomElement desc() {
 		return new DomElement("desc");
 	}
 	/**
-	 * Creates new {@code <ellipse>} element.
+	 * Creates new <code>&lt;ellipse&gt;</code> element.
 	 *
-	 * @return new {@code <ellipse>} element
+	 * @return new <code>&lt;ellipse&gt;</code> element
 	 */
 	public static DomElement ellipse() {
 		return new DomElement("ellipse");
 	}
 	/**
-	 * Creates new {@code <feBlend>} element.
+	 * Creates new <code>&lt;feBlend&gt;</code> element.
 	 *
-	 * @return new {@code <feBlend>} element
+	 * @return new <code>&lt;feBlend&gt;</code> element
 	 */
 	public static DomElement feBlend() {
 		return new DomElement("feBlend");
 	}
 	/**
-	 * Creates new {@code <feColorMatrix>} element.
+	 * Creates new <code>&lt;feColorMatrix&gt;</code> element.
 	 *
-	 * @return new {@code <feColorMatrix>} element
+	 * @return new <code>&lt;feColorMatrix&gt;</code> element
 	 */
 	public static DomElement feColorMatrix() {
 		return new DomElement("feColorMatrix");
 	}
 	/**
-	 * Creates new {@code <feComponentTransfer>} element.
+	 * Creates new <code>&lt;feComponentTransfer&gt;</code> element.
 	 *
-	 * @return new {@code <feComponentTransfer>} element
+	 * @return new <code>&lt;feComponentTransfer&gt;</code> element
 	 */
 	public static DomElement feComponentTransfer() {
 		return new DomElement("feComponentTransfer");
 	}
 	/**
-	 * Creates new {@code <feComposite>} element.
+	 * Creates new <code>&lt;feComposite&gt;</code> element.
 	 *
-	 * @return new {@code <feComposite>} element
+	 * @return new <code>&lt;feComposite&gt;</code> element
 	 */
 	public static DomElement feComposite() {
 		return new DomElement("feComposite");
 	}
 	/**
-	 * Creates new {@code <feConvolveMatrix>} element.
+	 * Creates new <code>&lt;feConvolveMatrix&gt;</code> element.
 	 *
-	 * @return new {@code <feConvolveMatrix>} element
+	 * @return new <code>&lt;feConvolveMatrix&gt;</code> element
 	 */
 	public static DomElement feConvolveMatrix() {
 		return new DomElement("feConvolveMatrix");
 	}
 	/**
-	 * Creates new {@code <feDiffuseLighting>} element.
+	 * Creates new <code>&lt;feDiffuseLighting&gt;</code> element.
 	 *
-	 * @return new {@code <feDiffuseLighting>} element
+	 * @return new <code>&lt;feDiffuseLighting&gt;</code> element
 	 */
 	public static DomElement feDiffuseLighting() {
 		return new DomElement("feDiffuseLighting");
 	}
 	/**
-	 * Creates new {@code <feDisplacementMap>} element.
+	 * Creates new <code>&lt;feDisplacementMap&gt;</code> element.
 	 *
-	 * @return new {@code <feDisplacementMap>} element
+	 * @return new <code>&lt;feDisplacementMap&gt;</code> element
 	 */
 	public static DomElement feDisplacementMap() {
 		return new DomElement("feDisplacementMap");
 	}
 	/**
-	 * Creates new {@code <feDistantLight>} element.
+	 * Creates new <code>&lt;feDistantLight&gt;</code> element.
 	 *
-	 * @return new {@code <feDistantLight>} element
+	 * @return new <code>&lt;feDistantLight&gt;</code> element
 	 */
 	public static DomElement feDistantLight() {
 		return new DomElement("feDistantLight");
 	}
 	/**
-	 * Creates new {@code <feFlood>} element.
+	 * Creates new <code>&lt;feFlood&gt;</code> element.
 	 *
-	 * @return new {@code <feFlood>} element
+	 * @return new <code>&lt;feFlood&gt;</code> element
 	 */
 	public static DomElement feFlood() {
 		return new DomElement("feFlood");
 	}
 	/**
-	 * Creates new {@code <feFuncA>} element.
+	 * Creates new <code>&lt;feFuncA&gt;</code> element.
 	 *
-	 * @return new {@code <feFuncA>} element
+	 * @return new <code>&lt;feFuncA&gt;</code> element
 	 */
 	public static DomElement feFuncA() {
 		return new DomElement("feFuncA");
 	}
 	/**
-	 * Creates new {@code <feFuncB>} element.
+	 * Creates new <code>&lt;feFuncB&gt;</code> element.
 	 *
-	 * @return new {@code <feFuncB>} element
+	 * @return new <code>&lt;feFuncB&gt;</code> element
 	 */
 	public static DomElement feFuncB() {
 		return new DomElement("feFuncB");
 	}
 	/**
-	 * Creates new {@code <feFuncG>} element.
+	 * Creates new <code>&lt;feFuncG&gt;</code> element.
 	 *
-	 * @return new {@code <feFuncG>} element
+	 * @return new <code>&lt;feFuncG&gt;</code> element
 	 */
 	public static DomElement feFuncG() {
 		return new DomElement("feFuncG");
 	}
 	/**
-	 * Creates new {@code <feFuncR>} element.
+	 * Creates new <code>&lt;feFuncR&gt;</code> element.
 	 *
-	 * @return new {@code <feFuncR>} element
+	 * @return new <code>&lt;feFuncR&gt;</code> element
 	 */
 	public static DomElement feFuncR() {
 		return new DomElement("feFuncR");
 	}
 	/**
-	 * Creates new {@code <feGaussianBlur>} element.
+	 * Creates new <code>&lt;feGaussianBlur&gt;</code> element.
 	 *
-	 * @return new {@code <feGaussianBlur>} element
+	 * @return new <code>&lt;feGaussianBlur&gt;</code> element
 	 */
 	public static DomElement feGaussianBlur() {
 		return new DomElement("feGaussianBlur");
 	}
 	/**
-	 * Creates new {@code <feImage>} element.
+	 * Creates new <code>&lt;feImage&gt;</code> element.
 	 *
-	 * @return new {@code <feImage>} element
+	 * @return new <code>&lt;feImage&gt;</code> element
 	 */
 	public static DomElement feImage() {
 		return new DomElement("feImage");
 	}
 	/**
-	 * Creates new {@code <feMerge>} element.
+	 * Creates new <code>&lt;feMerge&gt;</code> element.
 	 *
-	 * @return new {@code <feMerge>} element
+	 * @return new <code>&lt;feMerge&gt;</code> element
 	 */
 	public static DomElement feMerge() {
 		return new DomElement("feMerge");
 	}
 	/**
-	 * Creates new {@code <feMergeNode>} element.
+	 * Creates new <code>&lt;feMergeNode&gt;</code> element.
 	 *
-	 * @return new {@code <feMergeNode>} element
+	 * @return new <code>&lt;feMergeNode&gt;</code> element
 	 */
 	public static DomElement feMergeNode() {
 		return new DomElement("feMergeNode");
 	}
 	/**
-	 * Creates new {@code <feMorphology>} element.
+	 * Creates new <code>&lt;feMorphology&gt;</code> element.
 	 *
-	 * @return new {@code <feMorphology>} element
+	 * @return new <code>&lt;feMorphology&gt;</code> element
 	 */
 	public static DomElement feMorphology() {
 		return new DomElement("feMorphology");
 	}
 	/**
-	 * Creates new {@code <feOffset>} element.
+	 * Creates new <code>&lt;feOffset&gt;</code> element.
 	 *
-	 * @return new {@code <feOffset>} element
+	 * @return new <code>&lt;feOffset&gt;</code> element
 	 */
 	public static DomElement feOffset() {
 		return new DomElement("feOffset");
 	}
 	/**
-	 * Creates new {@code <fePointLight>} element.
+	 * Creates new <code>&lt;fePointLight&gt;</code> element.
 	 *
-	 * @return new {@code <fePointLight>} element
+	 * @return new <code>&lt;fePointLight&gt;</code> element
 	 */
 	public static DomElement fePointLight() {
 		return new DomElement("fePointLight");
 	}
 	/**
-	 * Creates new {@code <feSpecularLighting>} element.
+	 * Creates new <code>&lt;feSpecularLighting&gt;</code> element.
 	 *
-	 * @return new {@code <feSpecularLighting>} element
+	 * @return new <code>&lt;feSpecularLighting&gt;</code> element
 	 */
 	public static DomElement feSpecularLighting() {
 		return new DomElement("feSpecularLighting");
 	}
 	/**
-	 * Creates new {@code <feSpotLight>} element.
+	 * Creates new <code>&lt;feSpotLight&gt;</code> element.
 	 *
-	 * @return new {@code <feSpotLight>} element
+	 * @return new <code>&lt;feSpotLight&gt;</code> element
 	 */
 	public static DomElement feSpotLight() {
 		return new DomElement("feSpotLight");
 	}
 	/**
-	 * Creates new {@code <feTile>} element.
+	 * Creates new <code>&lt;feTile&gt;</code> element.
 	 *
-	 * @return new {@code <feTile>} element
+	 * @return new <code>&lt;feTile&gt;</code> element
 	 */
 	public static DomElement feTile() {
 		return new DomElement("feTile");
 	}
 	/**
-	 * Creates new {@code <feTurbulence>} element.
+	 * Creates new <code>&lt;feTurbulence&gt;</code> element.
 	 *
-	 * @return new {@code <feTurbulence>} element
+	 * @return new <code>&lt;feTurbulence&gt;</code> element
 	 */
 	public static DomElement feTurbulence() {
 		return new DomElement("feTurbulence");
 	}
 	/**
-	 * Creates new {@code <filter>} element.
+	 * Creates new <code>&lt;filter&gt;</code> element.
 	 *
-	 * @return new {@code <filter>} element
+	 * @return new <code>&lt;filter&gt;</code> element
 	 */
 	public static DomElement filter() {
 		return new DomElement("filter");
 	}
 	/**
-	 * Creates new {@code <font>} element.
+	 * Creates new <code>&lt;font&gt;</code> element.
 	 *
-	 * @return new {@code <font>} element
+	 * @return new <code>&lt;font&gt;</code> element
 	 */
 	public static DomElement font() {
 		return new DomElement("font");
 	}
 	/**
-	 * Creates new {@code <font-face>} element.
+	 * Creates new <code>&lt;font-face&gt;</code> element.
 	 *
-	 * @return new {@code <font-face>} element
+	 * @return new <code>&lt;font-face&gt;</code> element
 	 */
 	public static DomElement fontFace() {
 		return new DomElement("font-face");
 	}
 	/**
-	 * Creates new {@code <font-face-format>} element.
+	 * Creates new <code>&lt;font-face-format&gt;</code> element.
 	 *
-	 * @return new {@code <font-face-format>} element
+	 * @return new <code>&lt;font-face-format&gt;</code> element
 	 */
 	public static DomElement fontFaceFormat() {
 		return new DomElement("font-face-format");
 	}
 	/**
-	 * Creates new {@code <font-face-name>} element.
+	 * Creates new <code>&lt;font-face-name&gt;</code> element.
 	 *
-	 * @return new {@code <font-face-name>} element
+	 * @return new <code>&lt;font-face-name&gt;</code> element
 	 */
 	public static DomElement fontFaceName() {
 		return new DomElement("font-face-name");
 	}
 	/**
-	 * Creates new {@code <font-face-src>} element.
+	 * Creates new <code>&lt;font-face-src&gt;</code> element.
 	 *
-	 * @return new {@code <font-face-src>} element
+	 * @return new <code>&lt;font-face-src&gt;</code> element
 	 */
 	public static DomElement fontFaceSrc() {
 		return new DomElement("font-face-src");
 	}
 	/**
-	 * Creates new {@code <font-face-uri>} element.
+	 * Creates new <code>&lt;font-face-uri&gt;</code> element.
 	 *
-	 * @return new {@code <font-face-uri>} element
+	 * @return new <code>&lt;font-face-uri&gt;</code> element
 	 */
 	public static DomElement fontFaceUri() {
 		return new DomElement("font-face-uri");
 	}
 	/**
-	 * Creates new {@code <foreignObject>} element.
+	 * Creates new <code>&lt;foreignObject&gt;</code> element.
 	 *
-	 * @return new {@code <foreignObject>} element
+	 * @return new <code>&lt;foreignObject&gt;</code> element
 	 */
 	public static DomElement foreignObject() {
 		return new DomElement("foreignObject");
 	}
 	/**
-	 * Creates new {@code <g>} element.
+	 * Creates new <code>&lt;g&gt;</code> element.
 	 *
-	 * @return new {@code <g>} element
+	 * @return new <code>&lt;g&gt;</code> element
 	 */
 	public static DomElement g() {
 		return new DomElement("g");
 	}
 	/**
-	 * Creates new {@code <glyph>} element.
+	 * Creates new <code>&lt;glyph&gt;</code> element.
 	 *
-	 * @return new {@code <glyph>} element
+	 * @return new <code>&lt;glyph&gt;</code> element
 	 */
 	public static DomElement glyph() {
 		return new DomElement("glyph");
 	}
 	/**
-	 * Creates new {@code <glyphRef>} element.
+	 * Creates new <code>&lt;glyphRef&gt;</code> element.
 	 *
-	 * @return new {@code <glyphRef>} element
+	 * @return new <code>&lt;glyphRef&gt;</code> element
 	 */
 	public static DomElement glyphRef() {
 		return new DomElement("glyphRef");
 	}
 	/**
-	 * Creates new {@code <hkern>} element.
+	 * Creates new <code>&lt;hkern&gt;</code> element.
 	 *
-	 * @return new {@code <hkern>} element
+	 * @return new <code>&lt;hkern&gt;</code> element
 	 */
 	public static DomElement hkern() {
 		return new DomElement("hkern");
 	}
 	/**
-	 * Creates new {@code <image>} element.
+	 * Creates new <code>&lt;image&gt;</code> element.
 	 *
-	 * @return new {@code <image>} element
+	 * @return new <code>&lt;image&gt;</code> element
 	 */
 	public static DomElement image() {
 		return new DomElement("image");
 	}
 	/**
-	 * Creates new {@code <line>} element.
+	 * Creates new <code>&lt;line&gt;</code> element.
 	 *
-	 * @return new {@code <line>} element
+	 * @return new <code>&lt;line&gt;</code> element
 	 */
 	public static DomElement line() {
 		return new DomElement("line");
 	}
 	/**
-	 * Creates new {@code <linearGradient>} element.
+	 * Creates new <code>&lt;linearGradient&gt;</code> element.
 	 *
-	 * @return new {@code <linearGradient>} element
+	 * @return new <code>&lt;linearGradient&gt;</code> element
 	 */
 	public static DomElement linearGradient() {
 		return new DomElement("linearGradient");
 	}
 	/**
-	 * Creates new {@code <marker>} element.
+	 * Creates new <code>&lt;marker&gt;</code> element.
 	 *
-	 * @return new {@code <marker>} element
+	 * @return new <code>&lt;marker&gt;</code> element
 	 */
 	public static DomElement marker() {
 		return new DomElement("marker");
 	}
 	/**
-	 * Creates new {@code <mask>} element.
+	 * Creates new <code>&lt;mask&gt;</code> element.
 	 *
-	 * @return new {@code <mask>} element
+	 * @return new <code>&lt;mask&gt;</code> element
 	 */
 	public static DomElement mask() {
 		return new DomElement("mask");
 	}
 	/**
-	 * Creates new {@code <metadata>} element.
+	 * Creates new <code>&lt;metadata&gt;</code> element.
 	 *
-	 * @return new {@code <metadata>} element
+	 * @return new <code>&lt;metadata&gt;</code> element
 	 */
 	public static DomElement metadata() {
 		return new DomElement("metadata");
 	}
 	/**
-	 * Creates new {@code <missing-glyph>} element.
+	 * Creates new <code>&lt;missing-glyph&gt;</code> element.
 	 *
-	 * @return new {@code <missing-glyph>} element
+	 * @return new <code>&lt;missing-glyph&gt;</code> element
 	 */
 	public static DomElement missingGlyph() {
 		return new DomElement("missing-glyph");
 	}
 	/**
-	 * Creates new {@code <mpath>} element.
+	 * Creates new <code>&lt;mpath&gt;</code> element.
 	 *
-	 * @return new {@code <mpath>} element
+	 * @return new <code>&lt;mpath&gt;</code> element
 	 */
 	public static DomElement mpath() {
 		return new DomElement("mpath");
 	}
 	/**
-	 * Creates new {@code <path>} element.
+	 * Creates new <code>&lt;path&gt;</code> element.
 	 *
-	 * @return new {@code <path>} element
+	 * @return new <code>&lt;path&gt;</code> element
 	 */
 	public static DomElement path() {
 		return new DomElement("path");
 	}
 	/**
-	 * Creates new {@code <pattern>} element.
+	 * Creates new <code>&lt;pattern&gt;</code> element.
 	 *
-	 * @return new {@code <pattern>} element
+	 * @return new <code>&lt;pattern&gt;</code> element
 	 */
 	public static DomElement pattern() {
 		return new DomElement("pattern");
 	}
 	/**
-	 * Creates new {@code <polygon>} element.
+	 * Creates new <code>&lt;polygon&gt;</code> element.
 	 *
-	 * @return new {@code <polygon>} element
+	 * @return new <code>&lt;polygon&gt;</code> element
 	 */
 	public static DomElement polygon() {
 		return new DomElement("polygon");
 	}
 	/**
-	 * Creates new {@code <polyline>} element.
+	 * Creates new <code>&lt;polyline&gt;</code> element.
 	 *
-	 * @return new {@code <polyline>} element
+	 * @return new <code>&lt;polyline&gt;</code> element
 	 */
 	public static DomElement polyline() {
 		return new DomElement("polyline");
 	}
 	/**
-	 * Creates new {@code <radialGradient>} element.
+	 * Creates new <code>&lt;radialGradient&gt;</code> element.
 	 *
-	 * @return new {@code <radialGradient>} element
+	 * @return new <code>&lt;radialGradient&gt;</code> element
 	 */
 	public static DomElement radialGradient() {
 		return new DomElement("radialGradient");
 	}
 	/**
-	 * Creates new {@code <rect>} element.
+	 * Creates new <code>&lt;rect&gt;</code> element.
 	 *
-	 * @return new {@code <rect>} element
+	 * @return new <code>&lt;rect&gt;</code> element
 	 */
 	public static DomElement rect() {
 		return new DomElement("rect");
 	}
 	/**
-	 * Creates new {@code <script>} element.
+	 * Creates new <code>&lt;script&gt;</code> element.
 	 *
-	 * @return new {@code <script>} element
+	 * @return new <code>&lt;script&gt;</code> element
 	 */
 	public static DomElement script() {
 		return new DomElement("script");
 	}
 	/**
-	 * Creates new {@code <set>} element.
+	 * Creates new <code>&lt;set&gt;</code> element.
 	 *
-	 * @return new {@code <set>} element
+	 * @return new <code>&lt;set&gt;</code> element
 	 */
 	public static DomElement set() {
 		return new DomElement("set");
 	}
 	/**
-	 * Creates new {@code <stop>} element.
+	 * Creates new <code>&lt;stop&gt;</code> element.
 	 *
-	 * @return new {@code <stop>} element
+	 * @return new <code>&lt;stop&gt;</code> element
 	 */
 	public static DomElement stop() {
 		return new DomElement("stop");
 	}
 	/**
-	 * Creates new {@code <style>} element.
+	 * Creates new <code>&lt;style&gt;</code> element.
 	 *
-	 * @return new {@code <style>} element
+	 * @return new <code>&lt;style&gt;</code> element
 	 */
 	public static DomElement style() {
 		return new DomElement("style");
 	}
 	/**
-	 * Creates new {@code <svg>} element.
+	 * Creates new <code>&lt;svg&gt;</code> element.
 	 *
-	 * @return new {@code <svg>} element
+	 * @return new <code>&lt;svg&gt;</code> element
 	 */
 	public static DomElement svg() {
 		return new DomElement("svg");
 	}
 	/**
-	 * Creates new {@code <switch>} element.
+	 * Creates new <code>&lt;switch&gt;</code> element.
 	 *
-	 * @return new {@code <switch>} element
+	 * @return new <code>&lt;switch&gt;</code> element
 	 */
 	public static DomElement switched() {
 		return new DomElement("switch");
 	}
 	/**
-	 * Creates new {@code <symbol>} element.
+	 * Creates new <code>&lt;symbol&gt;</code> element.
 	 *
-	 * @return new {@code <symbol>} element
+	 * @return new <code>&lt;symbol&gt;</code> element
 	 */
 	public static DomElement symbol() {
 		return new DomElement("symbol");
 	}
 	/**
-	 * Creates new {@code <text>} element.
+	 * Creates new <code>&lt;text&gt;</code> element.
 	 *
-	 * @return new {@code <text>} element
+	 * @return new <code>&lt;text&gt;</code> element
 	 */
 	public static DomElement text() {
 		return new DomElement("text");
 	}
 	/**
-	 * Creates new {@code <textPath>} element.
+	 * Creates new <code>&lt;textPath&gt;</code> element.
 	 *
-	 * @return new {@code <textPath>} element
+	 * @return new <code>&lt;textPath&gt;</code> element
 	 */
 	public static DomElement textPath() {
 		return new DomElement("textPath");
 	}
 	/**
-	 * Creates new {@code <title>} element.
+	 * Creates new <code>&lt;title&gt;</code> element.
 	 *
-	 * @return new {@code <title>} element
+	 * @return new <code>&lt;title&gt;</code> element
 	 */
 	public static DomElement title() {
 		return new DomElement("title");
 	}
 	/**
-	 * Creates new {@code <tref>} element.
+	 * Creates new <code>&lt;tref&gt;</code> element.
 	 *
-	 * @return new {@code <tref>} element
+	 * @return new <code>&lt;tref&gt;</code> element
 	 */
 	public static DomElement tref() {
 		return new DomElement("tref");
 	}
 	/**
-	 * Creates new {@code <tspan>} element.
+	 * Creates new <code>&lt;tspan&gt;</code> element.
 	 *
-	 * @return new {@code <tspan>} element
+	 * @return new <code>&lt;tspan&gt;</code> element
 	 */
 	public static DomElement tspan() {
 		return new DomElement("tspan");
 	}
 	/**
-	 * Creates new {@code <use>} element.
+	 * Creates new <code>&lt;use&gt;</code> element.
 	 *
-	 * @return new {@code <use>} element
+	 * @return new <code>&lt;use&gt;</code> element
 	 */
 	public static DomElement use() {
 		return new DomElement("use");
 	}
 	/**
-	 * Creates new {@code <view>} element.
+	 * Creates new <code>&lt;view&gt;</code> element.
 	 *
-	 * @return new {@code <view>} element
+	 * @return new <code>&lt;view&gt;</code> element
 	 */
 	public static DomElement view() {
 		return new DomElement("view");
 	}
 	/**
-	 * Creates new {@code <vkern>} element.
+	 * Creates new <code>&lt;vkern&gt;</code> element.
 	 *
-	 * @return new {@code <vkern>} element
+	 * @return new <code>&lt;vkern&gt;</code> element
 	 */
 	public static DomElement vkern() {
 		return new DomElement("vkern");

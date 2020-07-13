@@ -688,9 +688,9 @@ def element_factory_source(abbreviation, classname, elements):
     for element in elements:
         output('''\
             /**
-             * Creates new {@code <''' + element + '''>} element.
+             * Creates new <code>&lt;''' + element + '''&gt;</code> element.
              *
-             * @return new {@code <''' + element + '''>} element
+             * @return new <code>&lt;''' + element + '''&gt;</code> element
              */
             public static DomElement ''' + mangled_element(element) + '''() {
                 return new DomElement("''' + element + '''");
