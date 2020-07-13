@@ -76,7 +76,8 @@ class PageExecutor implements ExecutorService {
 	 *            The supplied {@link Runnable} will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see PageExecutor#submit(Runnable)
 	 */
-	@Override public synchronized void execute(Runnable runnable) {
+	@Override
+	public synchronized void execute(Runnable runnable) {
 		Objects.requireNonNull(runnable);
 		queue.add(runnable);
 		schedule();
@@ -92,7 +93,8 @@ class PageExecutor implements ExecutorService {
 	 *            The supplied {@link Callable} will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see PageExecutor#submit(Runnable)
 	 */
-	@Override public <T> CompletableFuture<T> submit(Callable<T> task) {
+	@Override
+	public <T> CompletableFuture<T> submit(Callable<T> task) {
 		Objects.requireNonNull(task);
 		CompletableFuture<T> future = new CompletableFuture<>();
 		execute(() -> eval(task, future));
@@ -112,7 +114,8 @@ class PageExecutor implements ExecutorService {
 	 *            The supplied {@link Runnable} will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see PageExecutor#submit(Runnable)
 	 */
-	@Override public <T> CompletableFuture<T> submit(Runnable task, T result) {
+	@Override
+	public <T> CompletableFuture<T> submit(Runnable task, T result) {
 		Objects.requireNonNull(task);
 		return submit(Executors.callable(task, result));
 	}
@@ -127,7 +130,8 @@ class PageExecutor implements ExecutorService {
 	 *            The supplied {@link Runnable} will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see PageExecutor#submit(Callable)
 	 */
-	@Override public CompletableFuture<?> submit(Runnable task) {
+	@Override
+	public CompletableFuture<?> submit(Runnable task) {
 		Objects.requireNonNull(task);
 		return submit(Executors.callable(task));
 	}
@@ -142,7 +146,8 @@ class PageExecutor implements ExecutorService {
 	 *            This method blocks, which means it shouldn't be called from within event on any {@link PageExecutor}.
 	 *            The supplied tasks will run in the event loop, which means they don't need to synchronize access with other events in the same event loop.
 	 */
-	@Override public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) {
+	@Override
+	public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) {
 		if (tasks.stream().anyMatch(Objects::isNull))
 			throw new NullPointerException();
 		return new ArrayList<>(Exceptions.sneak().get(() -> submit(() -> {
@@ -168,7 +173,8 @@ class PageExecutor implements ExecutorService {
 	 *            This method blocks, which means it shouldn't be called from within event on any {@link PageExecutor}.
 	 *            The supplied tasks will run in the event loop, which means they don't need to synchronize access with other events in the same event loop.
 	 */
-	@Override public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) {
+	@Override
+	public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) {
 		List<Callable<T>> taskList = new ArrayList<>(tasks);
 		List<CompletableFuture<T>> futures = Stream.generate(CompletableFuture<T>::new)
 			.limit(tasks.size())
@@ -199,7 +205,8 @@ class PageExecutor implements ExecutorService {
 	 *            The first supplied task will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see #submit(Callable)
 	 */
-	@Override public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
+	@Override
+	public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
 		if (tasks.isEmpty())
 			throw new IllegalArgumentException();
 		return submit(tasks.stream().findFirst().get()).get();
@@ -221,27 +228,34 @@ class PageExecutor implements ExecutorService {
 	 *            The first supplied task will run in the event loop, which means it doesn't need to synchronize access with other events in the same event loop.
 	 * @see #submit(Callable)
 	 */
-	@Override public <T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+	@Override
+	public <T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
 		if (tasks.isEmpty())
 			throw new IllegalArgumentException();
 		return submit(tasks.stream().findFirst().get()).get(timeout, unit);
 	}
-	@Override public synchronized void shutdown() {
+	@Override
+	public synchronized void shutdown() {
 		throw new UnsupportedOperationException();
 	}
-	@Override public synchronized List<Runnable> shutdownNow() {
+	@Override
+	public synchronized List<Runnable> shutdownNow() {
 		throw new UnsupportedOperationException();
 	}
-	@Override public synchronized boolean isShutdown() {
+	@Override
+	public synchronized boolean isShutdown() {
 		return false;
 	}
-	@Override public synchronized boolean isTerminated() {
+	@Override
+	public synchronized boolean isTerminated() {
 		return false;
 	}
-	@Override public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+	@Override
+	public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
 		throw new UnsupportedOperationException();
 	}
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return PageExecutor.class.getSimpleName() + ": " + page.toString();
 	}
 	private static <T> void eval(Callable<T> task, CompletableFuture<T> future) {

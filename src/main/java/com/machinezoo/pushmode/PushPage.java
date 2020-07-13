@@ -122,7 +122,8 @@ public abstract class PushPage {
 	public boolean poster() {
 		return poster.get();
 	}
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return request.toString();
 	}
 	private static final Timer diffTime = Metrics.timer("pushmode.diffing");

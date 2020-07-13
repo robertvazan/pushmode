@@ -11,10 +11,12 @@ public final class CheckedBinding extends DomBinding {
 				handler.accept(Boolean.parseBoolean(v));
 		});
 	}
-	@Override public String attribute() {
+	@Override
+	public String attribute() {
 		return "checked";
 	}
-	@Override public Class<?> datatype() {
+	@Override
+	public Class<?> datatype() {
 		return Boolean.class;
 	}
 }

@@ -37,7 +37,8 @@ public class PushScriptServlet extends ReactiveServlet {
 	 * The only downside is reduced performance in rare cases when If-None-Match actually contains multiple values.
 	 */
 	private static final Pattern etagRe = Pattern.compile("\\s*\"([^\"]+)\"\\s*");
-	@Override public ReactiveServletResponse doGet(ReactiveServletRequest request) {
+	@Override
+	public ReactiveServletResponse doGet(ReactiveServletRequest request) {
 		ReactiveServletResponse response = new ReactiveServletResponse();
 		response.headers().put("Cache-Control", "max-age=31536000");
 		/*

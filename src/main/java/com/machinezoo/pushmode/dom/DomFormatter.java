@@ -15,7 +15,8 @@ public class DomFormatter {
 	 * but for now we are happy with StringBuilder.toString().
 	 */
 	private StringBuilder buffer = new StringBuilder();
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return buffer.toString();
 	}
 	/*

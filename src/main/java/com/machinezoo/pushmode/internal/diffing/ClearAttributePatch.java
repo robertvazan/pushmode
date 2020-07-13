@@ -9,10 +9,12 @@ class ClearAttributePatch extends DomPatch {
 	ClearAttributePatch(String name) {
 		this.name = name;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 'c';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		return new TextNode(name);
 	}
 }

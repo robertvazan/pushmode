@@ -9,10 +9,12 @@ class ChildPatchStart extends DomPatch {
 	ChildPatchStart(int at) {
 		this.at = at;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 'p';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		return new IntNode(at);
 	}
 }

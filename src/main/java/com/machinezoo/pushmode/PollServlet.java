@@ -14,7 +14,8 @@ import com.machinezoo.hookless.time.*;
 import com.machinezoo.noexception.*;
 import io.micrometer.core.instrument.*;
 
-@SuppressWarnings("serial") public class PollServlet extends ReactiveServlet {
+@SuppressWarnings("serial")
+public class PollServlet extends ReactiveServlet {
 	private static final Counter reloadCounter = Metrics.counter("pushmode.poll.reloads");
 	private static final Counter exceptionCounter = Metrics.counter("pushmode.poll.exceptions");
 	private static final Counter requestCounter = Metrics.counter("pushmode.poll.requests");
@@ -22,7 +23,8 @@ import io.micrometer.core.instrument.*;
 	private static final Counter trafficCounter = Metrics.counter("pushmode.poll.traffic");
 	private static final LongTaskTimer activeTimer = LongTaskTimer.builder("pushmode.poll.active").register(Metrics.globalRegistry);
 	private static final ObjectMapper mapper = new ObjectMapper();
-	@Override public ReactiveServletResponse doPost(ReactiveServletRequest request) {
+	@Override
+	public ReactiveServletResponse doPost(ReactiveServletRequest request) {
 		Instant start = CurrentReactiveScope.pin("start", Instant::now);
 		LongTaskTimer.Sample sample = CurrentReactiveScope.pin("sample", activeTimer::start);
 		try {

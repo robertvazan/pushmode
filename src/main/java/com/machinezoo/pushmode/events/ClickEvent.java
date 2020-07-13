@@ -7,10 +7,12 @@ public final class ClickEvent extends DomEvent {
 	public ClickEvent(Runnable handler) {
 		super(handler);
 	}
-	@Override public String name() {
+	@Override
+	public String name() {
 		return "click";
 	}
-	@Override public ClickEvent withHandler(Runnable handler) {
+	@Override
+	public ClickEvent withHandler(Runnable handler) {
 		return new ClickEvent(handler);
 	}
 }

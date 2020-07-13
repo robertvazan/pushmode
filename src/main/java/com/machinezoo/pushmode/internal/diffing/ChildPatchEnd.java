@@ -4,10 +4,12 @@ package com.machinezoo.pushmode.internal.diffing;
 import com.fasterxml.jackson.databind.*;
 
 class ChildPatchEnd extends DomPatch {
-	@Override char code() {
+	@Override
+	char code() {
 		return 'f';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		return null;
 	}
 }

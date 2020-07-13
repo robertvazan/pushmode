@@ -22,7 +22,8 @@ public class DomText extends DomContent {
 	 * 
 	 * @return content of this text node
 	 */
-	@Override public String text() {
+	@Override
+	public String text() {
 		return text;
 	}
 	/**
@@ -42,7 +43,8 @@ public class DomText extends DomContent {
 	 * 
 	 * @return {@code this}
 	 */
-	@Override public DomText clone() {
+	@Override
+	public DomText clone() {
 		return this;
 	}
 	/**
@@ -53,7 +55,8 @@ public class DomText extends DomContent {
 	 *            object to compare this text node with
 	 * @return {@code true} if the two text nodes are equal, {@code false} otherwise
 	 */
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		if (this == object)
 			return true;
 		if (!(object instanceof DomText))
@@ -66,7 +69,8 @@ public class DomText extends DomContent {
 	 * 
 	 * @return hash code of the text node
 	 */
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		return text.hashCode();
 	}
 	/**
@@ -75,7 +79,8 @@ public class DomText extends DomContent {
 	 * 
 	 * @return {@code this}
 	 */
-	@Override public DomText freeze() {
+	@Override
+	public DomText freeze() {
 		return this;
 	}
 	/*

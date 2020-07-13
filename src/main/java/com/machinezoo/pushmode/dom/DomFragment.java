@@ -45,7 +45,8 @@ public final class DomFragment extends DomContainer {
 	 * @return deep mutable clone
 	 * @see #DomFragment(DomFragment)
 	 */
-	@Override public DomFragment clone() {
+	@Override
+	public DomFragment clone() {
 		return new DomFragment(this);
 	}
 	/**
@@ -88,7 +89,8 @@ public final class DomFragment extends DomContainer {
 	 *            object to compare this fragment with
 	 * @return {@code true} if the two fragments are equal, {@code false} otherwise
 	 */
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		return super.equals(object);
 	}
 	/**
@@ -97,7 +99,8 @@ public final class DomFragment extends DomContainer {
 	 * 
 	 * @return fragment's hash code
 	 */
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		return super.hashCode();
 	}
 	/*
@@ -117,7 +120,8 @@ public final class DomFragment extends DomContainer {
 	 * @see #add(Collection)
 	 * @see #add(Stream)
 	 */
-	@Override public DomFragment add(DomContent child) {
+	@Override
+	public DomFragment add(DomContent child) {
 		super.add(child);
 		return this;
 	}
@@ -132,7 +136,8 @@ public final class DomFragment extends DomContainer {
 	 *             {@inheritDoc}
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomFragment add(Collection<C> children) {
+	@Override
+	public <C extends DomContent> DomFragment add(Collection<C> children) {
 		super.add(children);
 		return this;
 	}
@@ -147,7 +152,8 @@ public final class DomFragment extends DomContainer {
 	 *             {@inheritDoc}
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomFragment add(Stream<C> children) {
+	@Override
+	public <C extends DomContent> DomFragment add(Stream<C> children) {
 		super.add(children);
 		return this;
 	}
@@ -162,7 +168,8 @@ public final class DomFragment extends DomContainer {
 	 *             {@inheritDoc}
 	 * @see #add(DomContent)
 	 */
-	@Override public DomFragment add(String text) {
+	@Override
+	public DomFragment add(String text) {
 		super.add(text);
 		return this;
 	}
@@ -173,7 +180,8 @@ public final class DomFragment extends DomContainer {
 	 * @return {@code this}
 	 * @see DomContent#freeze()
 	 */
-	@Override public DomFragment freeze() {
+	@Override
+	public DomFragment freeze() {
 		super.freeze();
 		return this;
 	}

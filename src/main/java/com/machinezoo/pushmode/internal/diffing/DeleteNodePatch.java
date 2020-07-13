@@ -9,10 +9,12 @@ class DeleteNodePatch extends DomPatch {
 	DeleteNodePatch(int at) {
 		this.at = at;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 'd';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		return new IntNode(at);
 	}
 }

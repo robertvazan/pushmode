@@ -8,10 +8,12 @@ public final class ValueBinding extends DomBinding {
 	public ValueBinding(String value, Consumer<String> handler) {
 		super(value, handler);
 	}
-	@Override public String attribute() {
+	@Override
+	public String attribute() {
 		return "value";
 	}
-	@Override public Class<?> datatype() {
+	@Override
+	public Class<?> datatype() {
 		return String.class;
 	}
 }

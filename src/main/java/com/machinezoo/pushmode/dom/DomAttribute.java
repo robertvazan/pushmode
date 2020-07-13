@@ -22,7 +22,8 @@ public class DomAttribute {
 		this.name = name;
 		this.value = value;
 	}
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		if (this == object)
 			return true;
 		if (!(object instanceof DomAttribute))
@@ -30,7 +31,8 @@ public class DomAttribute {
 		DomAttribute other = (DomAttribute)object;
 		return name.equals(other.name) && Objects.equals(value, other.value);
 	}
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		return 31 * name.hashCode() + Objects.hashCode(value);
 	}
 }

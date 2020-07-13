@@ -14,17 +14,20 @@ class EventMessage extends ListenerMessage {
 		super(json);
 		name = json.get("n").asText();
 	}
-	@Override public Object key() {
+	@Override
+	public Object key() {
 		return new EventKey(elementId(), name);
 	}
-	@Override public void match(DomListener listener) {
+	@Override
+	public void match(DomListener listener) {
 		if (listener instanceof DomEvent) {
 			DomEvent event = (DomEvent)listener;
 			if (name.equals(event.name()) && event.handler() != null)
 				Exceptions.log(logger).run(event.handler());
 		}
 	}
-	@Override ListenerMessage combine(ListenerMessage next) {
+	@Override
+	ListenerMessage combine(ListenerMessage next) {
 		throw new UnsupportedOperationException();
 	}
 	private static class EventKey {
@@ -34,16 +37,19 @@ class EventMessage extends ListenerMessage {
 			this.elementId = elementId;
 			this.name = name;
 		}
-		@Override public boolean equals(Object obj) {
+		@Override
+		public boolean equals(Object obj) {
 			if (!(obj instanceof EventKey))
 				return false;
 			EventKey other = (EventKey)obj;
 			return Objects.equals(elementId, other.elementId) && Objects.equals(name, other.name);
 		}
-		@Override public int hashCode() {
+		@Override
+		public int hashCode() {
 			return Objects.hash(elementId, name);
 		}
-		@Override public String toString() {
+		@Override
+		public String toString() {
 			return name + ":" + elementId;
 		}
 	}

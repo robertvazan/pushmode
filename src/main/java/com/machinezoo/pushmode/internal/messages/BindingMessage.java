@@ -14,17 +14,20 @@ class BindingMessage extends ListenerMessage {
 		attribute = json.get("a").asText();
 		value = json.get("v").asText();
 	}
-	@Override public Object key() {
+	@Override
+	public Object key() {
 		return new BindingKey(elementId(), attribute);
 	}
-	@Override public void match(DomListener listener) {
+	@Override
+	public void match(DomListener listener) {
 		if (listener instanceof DomBinding) {
 			DomBinding binding = (DomBinding)listener;
 			if (attribute.equals(binding.attribute()) && binding.handler() != null)
 				Exceptions.log().consumer(binding.handler()).accept(value);
 		}
 	}
-	@Override ListenerMessage combine(ListenerMessage next) {
+	@Override
+	ListenerMessage combine(ListenerMessage next) {
 		if (!attribute.equals(((BindingMessage)next).attribute))
 			throw new IllegalArgumentException();
 		return next;
@@ -36,16 +39,19 @@ class BindingMessage extends ListenerMessage {
 			this.elementId = elementId;
 			this.attribute = attribute;
 		}
-		@Override public boolean equals(Object obj) {
+		@Override
+		public boolean equals(Object obj) {
 			if (!(obj instanceof BindingKey))
 				return false;
 			BindingKey other = (BindingKey)obj;
 			return Objects.equals(elementId, other.elementId) && Objects.equals(attribute, other.attribute);
 		}
-		@Override public int hashCode() {
+		@Override
+		public int hashCode() {
 			return Objects.hash(elementId, attribute);
 		}
-		@Override public String toString() {
+		@Override
+		public String toString() {
 			return attribute + ":" + elementId;
 		}
 	}

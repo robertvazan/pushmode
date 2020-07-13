@@ -12,10 +12,12 @@ class InsertElementPatch extends DomPatch {
 		this.at = at;
 		this.element = element;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 'e';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		ObjectNode node = DocumentPatch.mapper.createObjectNode();
 		node.put("i", at);
 		node.put("h", DomFormatter.fragment()

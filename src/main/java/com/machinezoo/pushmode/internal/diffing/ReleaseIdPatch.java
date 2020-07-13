@@ -9,7 +9,8 @@ class ReleaseIdPatch extends IdPatch {
 	ReleaseIdPatch(DomElement element) {
 		this.element = element;
 	}
-	@Override void updateIdMap(ElementIdIndex index) {
+	@Override
+	void updateIdMap(ElementIdIndex index) {
 		index.remove(element);
 	}
 }

@@ -8,10 +8,12 @@ import java.util.stream.*;
 import org.junit.jupiter.api.*;
 
 public class DomTextTest {
-	@Test public void toleratesNull() {
+	@Test
+	public void toleratesNull() {
 		assertEquals("", new DomText(null).text());
 	}
-	@Test public void equatable() {
+	@Test
+	public void equatable() {
 		assertEquals(new DomText("same"), new DomText("same"));
 		assertEquals(new DomText("same").hashCode(), new DomText("same").hashCode());
 		assertEquals(new DomText(new String("same")), new DomText(new String("same")));

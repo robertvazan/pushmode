@@ -213,7 +213,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 		attributes[at] = name;
 		attributes[at + 1] = value;
 	}
-	@Override public DomElement unset(String name) {
+	@Override
+	public DomElement unset(String name) {
 		touch();
 		Objects.requireNonNull(name);
 		if (attributes != null) {
@@ -255,33 +256,39 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * We could provide overloads that take primitive wrappers,
 	 * but that's a rare use case that would cost us dozens of rarely used specialized setters.
 	 */
-	@Override public DomElement set(String name, String value) {
+	@Override
+	public DomElement set(String name, String value) {
 		if (value != null)
 			setNullable(name, value);
 		else
 			unset(name);
 		return this;
 	}
-	@Override public DomElement set(String name, boolean value) {
+	@Override
+	public DomElement set(String name, boolean value) {
 		if (value)
 			setNullable(name, null);
 		else
 			unset(name);
 		return this;
 	}
-	@Override public DomElement set(String name) {
+	@Override
+	public DomElement set(String name) {
 		setNullable(name, null);
 		return this;
 	}
-	@Override public DomElement set(String name, int value) {
+	@Override
+	public DomElement set(String name, int value) {
 		setNullable(name, Integer.toString(value));
 		return this;
 	}
-	@Override public DomElement set(String name, double value) {
+	@Override
+	public DomElement set(String name, double value) {
 		setNullable(name, Double.toString(value));
 		return this;
 	}
-	@Override public DomElement set(DomAttribute attribute) {
+	@Override
+	public DomElement set(DomAttribute attribute) {
 		if (attribute != null)
 			setNullable(attribute.name(), attribute.value());
 		return this;
@@ -307,7 +314,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * The current implementation returns a copy, which is mostly justified by simplicity/laziness.
 	 * Live view could be implemented and this option is not excluded from future development.
 	 */
-	@Override public List<DomAttribute> attributes() {
+	@Override
+	public List<DomAttribute> attributes() {
 		List<DomAttribute> result = new ArrayList<>();
 		if (attributes != null) {
 			for (int i = 0; i < attributes.length; i += 2) {
@@ -318,7 +326,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return result;
 	}
-	@Override public DomAttribute attribute(String name) {
+	@Override
+	public DomAttribute attribute(String name) {
 		if (attributes != null) {
 			for (int i = 0; i < attributes.length; i += 2) {
 				if (attributes[i] == null)
@@ -329,16 +338,19 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return null;
 	}
-	@Override public String attributeAsString(String name) {
+	@Override
+	public String attributeAsString(String name) {
 		DomAttribute attribute = attribute(name);
 		if (attribute == null)
 			return null;
 		return attribute.value();
 	}
-	@Override public boolean attributeAsBoolean(String name) {
+	@Override
+	public boolean attributeAsBoolean(String name) {
 		return attribute(name) != null;
 	}
-	@Override public OptionalInt attributeAsInt(String name) {
+	@Override
+	public OptionalInt attributeAsInt(String name) {
 		DomAttribute attribute = attribute(name);
 		if (attribute == null)
 			return OptionalInt.empty();
@@ -346,7 +358,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 			return OptionalInt.empty();
 		return OptionalInt.of(Integer.parseInt(attribute.value()));
 	}
-	@Override public OptionalDouble attributeAsDouble(String name) {
+	@Override
+	public OptionalDouble attributeAsDouble(String name) {
 		DomAttribute attribute = attribute(name);
 		if (attribute == null)
 			return OptionalDouble.empty();
@@ -423,7 +436,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *             if this element is frozen
 	 * @see #add(String)
 	 */
-	@Override public DomElement add(DomContent child) {
+	@Override
+	public DomElement add(DomContent child) {
 		super.add(child);
 		return this;
 	}
@@ -437,7 +451,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *             if this element is frozen
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomElement add(Collection<C> children) {
+	@Override
+	public <C extends DomContent> DomElement add(Collection<C> children) {
 		super.add(children);
 		return this;
 	}
@@ -451,7 +466,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *             if this element is frozen
 	 * @see #add(DomContent)
 	 */
-	@Override public <C extends DomContent> DomElement add(Stream<C> children) {
+	@Override
+	public <C extends DomContent> DomElement add(Stream<C> children) {
 		super.add(children);
 		return this;
 	}
@@ -469,7 +485,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *             if this element is frozen
 	 * @see #add(DomContent)
 	 */
-	@Override public DomElement add(String text) {
+	@Override
+	public DomElement add(String text) {
 		super.add(text);
 		return this;
 	}
@@ -509,7 +526,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * 
 	 * @return {@inheritDoc}
 	 */
-	@Override public DomElement clone() {
+	@Override
+	public DomElement clone() {
 		return new DomElement(this);
 	}
 	/**
@@ -523,7 +541,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *            object to compare this element with
 	 * @return {@code true} if the two elements are equal, {@code false} otherwise
 	 */
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		if (this == object)
 			return true;
 		if (!super.equals(object))
@@ -562,7 +581,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * 
 	 * @return hash code of the element
 	 */
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		int hash = super.hashCode();
 		hash = 31 * hash + Objects.hashCode(key);
 		hash = 31 * hash + Objects.hashCode(id);
@@ -598,7 +618,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * 
 	 * @return {@code this}
 	 */
-	@Override public DomElement freeze() {
+	@Override
+	public DomElement freeze() {
 		if (!frozen) {
 			super.freeze();
 			attributes = shrink(attributes, 2);

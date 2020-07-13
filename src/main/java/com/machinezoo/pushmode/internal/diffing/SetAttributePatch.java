@@ -11,10 +11,12 @@ class SetAttributePatch extends DomPatch {
 		this.name = name;
 		this.value = value;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 'a';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		ObjectNode node = DocumentPatch.mapper.createObjectNode();
 		node.put("n", name);
 		node.put("v", value);

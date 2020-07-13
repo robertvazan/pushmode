@@ -22,21 +22,26 @@ public abstract class DomBinding extends DomListener {
 	}
 	public abstract String attribute();
 	public abstract Class<?> datatype();
-	@Override public DomBinding combine(DomListener other) {
+	@Override
+	public DomBinding combine(DomListener other) {
 		if (other.getClass() == getClass())
 			return (DomBinding)other;
 		return null;
 	}
-	@Override public boolean isSameSubscription(DomListener other) {
+	@Override
+	public boolean isSameSubscription(DomListener other) {
 		return this == other || getClass() == other.getClass();
 	}
-	@Override public String listenerTypeCode() {
+	@Override
+	public String listenerTypeCode() {
 		return "b";
 	}
-	@Override public String listenerMapKey() {
+	@Override
+	public String listenerMapKey() {
 		return attribute();
 	}
-	@Override public void subscribeJson(ObjectNode json) {
+	@Override
+	public void subscribeJson(ObjectNode json) {
 		super.subscribeJson(json);
 		if (datatype() == Boolean.class)
 			json.put("d", "b");
@@ -44,11 +49,13 @@ public abstract class DomBinding extends DomListener {
 			json.put("d", "s");
 		json.put("v", value);
 	}
-	@Override protected void subscribeJsonCommon(ObjectNode json) {
+	@Override
+	protected void subscribeJsonCommon(ObjectNode json) {
 		super.subscribeJsonCommon(json);
 		json.put("a", attribute());
 	}
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		if (this == object)
 			return true;
 		if (object == null || getClass() != object.getClass())
@@ -56,7 +63,8 @@ public abstract class DomBinding extends DomListener {
 		DomBinding other = (DomBinding)object;
 		return handler == other.handler && value.equals(other.value);
 	}
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		return 31 * 31 * getClass().hashCode() + 31 * Objects.hashCode(handler) + value.hashCode();
 	}
 }

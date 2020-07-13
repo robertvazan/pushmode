@@ -11,10 +11,12 @@ class InsertTextPatch extends DomPatch {
 		this.at = at;
 		this.text = text;
 	}
-	@Override char code() {
+	@Override
+	char code() {
 		return 't';
 	}
-	@Override JsonNode toJson() {
+	@Override
+	JsonNode toJson() {
 		ObjectNode node = DocumentPatch.mapper.createObjectNode();
 		node.put("i", at);
 		node.put("t", text);

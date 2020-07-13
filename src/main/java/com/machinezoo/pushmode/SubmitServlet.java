@@ -21,7 +21,8 @@ public class SubmitServlet extends ReactiveServlet {
 	private static final Counter reloadCounter = Metrics.counter("pushmode.submit.reloads");
 	private static final ObjectMapper mapper = new ObjectMapper();
 	private static final Logger logger = LoggerFactory.getLogger(SubmitServlet.class);
-	@Override public ReactiveServletResponse doPost(ReactiveServletRequest request) {
+	@Override
+	public ReactiveServletResponse doPost(ReactiveServletRequest request) {
 		Timer.Sample sample = Timer.start(Clock.SYSTEM);
 		String buster = Exceptions.sneak().get(() -> new URIBuilder(request.url())).getQueryParams().stream()
 			.filter(p -> p.getName().equals("v"))

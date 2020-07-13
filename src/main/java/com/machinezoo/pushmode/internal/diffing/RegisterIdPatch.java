@@ -9,7 +9,8 @@ class RegisterIdPatch extends IdPatch {
 	RegisterIdPatch(DomElement element) {
 		this.element = element;
 	}
-	@Override void updateIdMap(ElementIdIndex index) {
+	@Override
+	void updateIdMap(ElementIdIndex index) {
 		index.add(element);
 	}
 }

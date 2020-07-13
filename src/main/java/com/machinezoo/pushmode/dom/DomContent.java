@@ -31,7 +31,8 @@ public abstract class DomContent implements Cloneable {
 	 * 
 	 * @return deep mutable clone or {@code this} for immutable nodes
 	 */
-	@Override public abstract DomContent clone();
+	@Override
+	public abstract DomContent clone();
 	/*
 	 * Equality and hashing merely forwards to base class by default.
 	 * Actual comparison and hashing must be implemented by derived classes.
@@ -46,7 +47,8 @@ public abstract class DomContent implements Cloneable {
 	 *            the other DOM node to compare this node to
 	 * @return {@code true} if the two nodes are equal, {@code false} otherwise
 	 */
-	@Override public boolean equals(Object obj) {
+	@Override
+	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
 	/**
@@ -55,7 +57,8 @@ public abstract class DomContent implements Cloneable {
 	 * 
 	 * @return hash code of the node
 	 */
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		return super.hashCode();
 	}
 	/**
@@ -100,7 +103,8 @@ public abstract class DomContent implements Cloneable {
 	 * 
 	 * @return HTML representation of this node
 	 */
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return DomFormatter.fragment()
 			.format(this)
 			.toString();

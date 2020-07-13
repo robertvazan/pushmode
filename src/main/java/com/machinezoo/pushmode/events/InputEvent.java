@@ -7,10 +7,12 @@ public final class InputEvent extends DomEvent {
 	public InputEvent(Runnable handler) {
 		super(handler);
 	}
-	@Override public String name() {
+	@Override
+	public String name() {
 		return "input";
 	}
-	@Override public InputEvent withHandler(Runnable handler) {
+	@Override
+	public InputEvent withHandler(Runnable handler) {
 		return new InputEvent(handler);
 	}
 }

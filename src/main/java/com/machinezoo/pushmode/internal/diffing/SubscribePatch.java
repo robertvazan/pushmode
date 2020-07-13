@@ -6,7 +6,8 @@ import com.machinezoo.pushmode.dom.*;
 
 class SubscribePatch extends ListenerPatch {
 	private final String elementId;
-	@Override String elementId() {
+	@Override
+	String elementId() {
 		return elementId;
 	}
 	private final DomListener listener;
@@ -14,7 +15,8 @@ class SubscribePatch extends ListenerPatch {
 		this.elementId = elementId;
 		this.listener = listener;
 	}
-	@Override void listenerJson(ObjectNode json) {
+	@Override
+	void listenerJson(ObjectNode json) {
 		listener.subscribeJson(json);
 	}
 }

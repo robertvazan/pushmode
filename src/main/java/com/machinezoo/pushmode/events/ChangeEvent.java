@@ -7,10 +7,12 @@ public final class ChangeEvent extends DomEvent {
 	public ChangeEvent(Runnable handler) {
 		super(handler);
 	}
-	@Override public String name() {
+	@Override
+	public String name() {
 		return "change";
 	}
-	@Override public ChangeEvent withHandler(Runnable handler) {
+	@Override
+	public ChangeEvent withHandler(Runnable handler) {
 		return new ChangeEvent(handler);
 	}
 }

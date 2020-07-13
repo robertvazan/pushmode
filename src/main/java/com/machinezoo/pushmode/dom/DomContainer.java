@@ -313,115 +313,149 @@ public abstract class DomContainer extends DomContent {
 		ChildIterator(int cursor) {
 			this.cursor = cursor;
 		}
-		@Override public void add(DomContent child) {
+		@Override
+		public void add(DomContent child) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean hasNext() {
+		@Override
+		public boolean hasNext() {
 			return cursor < size;
 		}
-		@Override public boolean hasPrevious() {
+		@Override
+		public boolean hasPrevious() {
 			return cursor > 0;
 		}
-		@Override public DomContent next() {
+		@Override
+		public DomContent next() {
 			if (cursor < 0 || cursor >= size)
 				throw new IndexOutOfBoundsException();
 			++cursor;
 			return children[cursor - 1];
 		}
-		@Override public int nextIndex() {
+		@Override
+		public int nextIndex() {
 			return cursor;
 		}
-		@Override public DomContent previous() {
+		@Override
+		public DomContent previous() {
 			if (cursor <= 0 || cursor > size)
 				throw new IndexOutOfBoundsException();
 			--cursor;
 			return children[cursor];
 		}
-		@Override public int previousIndex() {
+		@Override
+		public int previousIndex() {
 			return cursor - 1;
 		}
-		@Override public void remove() {
+		@Override
+		public void remove() {
 			throw new UnsupportedOperationException();
 		}
-		@Override public void set(DomContent child) {
+		@Override
+		public void set(DomContent child) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public String toString() {
+		@Override
+		public String toString() {
 			return "@" + cursor + " in " + DomContainer.this.toString();
 		}
 	}
 	private class ChildList implements List<DomContent> {
-		@Override public boolean add(DomContent child) {
+		@Override
+		public boolean add(DomContent child) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public void add(int index, DomContent child) {
+		@Override
+		public void add(int index, DomContent child) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean addAll(Collection<? extends DomContent> collection) {
+		@Override
+		public boolean addAll(Collection<? extends DomContent> collection) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean addAll(int index, Collection<? extends DomContent> collection) {
+		@Override
+		public boolean addAll(int index, Collection<? extends DomContent> collection) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public void clear() {
+		@Override
+		public void clear() {
 			size = 0;
 			children = null;
 		}
-		@Override public boolean contains(Object object) {
+		@Override
+		public boolean contains(Object object) {
 			return new ArrayList<>(this).contains(object);
 		}
-		@Override public boolean containsAll(Collection<?> collection) {
+		@Override
+		public boolean containsAll(Collection<?> collection) {
 			return new ArrayList<>(this).containsAll(collection);
 		}
-		@Override public DomContent get(int index) {
+		@Override
+		public DomContent get(int index) {
 			if (index < 0 || index >= size)
 				throw new IndexOutOfBoundsException();
 			return children[index];
 		}
-		@Override public int indexOf(Object object) {
+		@Override
+		public int indexOf(Object object) {
 			return new ArrayList<>(this).indexOf(object);
 		}
-		@Override public boolean isEmpty() {
+		@Override
+		public boolean isEmpty() {
 			return size <= 0;
 		}
-		@Override public Iterator<DomContent> iterator() {
+		@Override
+		public Iterator<DomContent> iterator() {
 			return new ChildIterator();
 		}
-		@Override public int lastIndexOf(Object object) {
+		@Override
+		public int lastIndexOf(Object object) {
 			return new ArrayList<>(this).lastIndexOf(object);
 		}
-		@Override public ListIterator<DomContent> listIterator() {
+		@Override
+		public ListIterator<DomContent> listIterator() {
 			return new ChildIterator();
 		}
-		@Override public ListIterator<DomContent> listIterator(int index) {
+		@Override
+		public ListIterator<DomContent> listIterator(int index) {
 			return new ChildIterator(index);
 		}
-		@Override public DomContent remove(int index) {
+		@Override
+		public DomContent remove(int index) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean remove(Object object) {
+		@Override
+		public boolean remove(Object object) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean removeAll(Collection<?> collection) {
+		@Override
+		public boolean removeAll(Collection<?> collection) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public boolean retainAll(Collection<?> collection) {
+		@Override
+		public boolean retainAll(Collection<?> collection) {
 			throw new UnsupportedOperationException();
 		}
-		@Override public DomContent set(int index, DomContent child) {
+		@Override
+		public DomContent set(int index, DomContent child) {
 			Objects.requireNonNull(child);
 			throw new UnsupportedOperationException();
 		}
-		@Override public int size() {
+		@Override
+		public int size() {
 			return size;
 		}
-		@Override public List<DomContent> subList(int fromIndex, int toIndex) {
+		@Override
+		public List<DomContent> subList(int fromIndex, int toIndex) {
 			return Collections.unmodifiableList(new ArrayList<>(this).subList(fromIndex, toIndex));
 		}
-		@Override public Object[] toArray() {
+		@Override
+		public Object[] toArray() {
 			return toArray(new Object[0]);
 		}
-		@SuppressWarnings("unchecked") @Override public <T> T[] toArray(T[] array) {
+		@SuppressWarnings("unchecked")
+		@Override
+		public <T> T[] toArray(T[] array) {
 			if (size > array.length)
 				array = (T[])Array.newInstance(array.getClass().getComponentType(), size);
 			System.arraycopy(children, 0, array, 0, size);
@@ -429,7 +463,8 @@ public abstract class DomContainer extends DomContent {
 				array[size] = null;
 			return array;
 		}
-		@Override public String toString() {
+		@Override
+		public String toString() {
 			DomFormatter formatter = DomFormatter.fragment();
 			for (int i = 0; i < size; ++i)
 				formatter.format(children[i]);
@@ -503,7 +538,8 @@ public abstract class DomContainer extends DomContent {
 	 * Many elements are text-only and we need a convenient way to get the text out of them.
 	 * Additionally, it is sometimes useful to extract plaintext from richtext DOM tree.
 	 */
-	@Override public String text() {
+	@Override
+	public String text() {
 		return children().stream().map(DomContent::text).collect(joining());
 	}
 	/*
@@ -536,7 +572,8 @@ public abstract class DomContainer extends DomContent {
 	 * 
 	 * @return {@code this}
 	 */
-	@Override public DomContainer freeze() {
+	@Override
+	public DomContainer freeze() {
 		if (!frozen) {
 			frozen = true;
 			if (size <= 0)
@@ -558,7 +595,8 @@ public abstract class DomContainer extends DomContent {
 	 * 
 	 * @return deep mutable clone
 	 */
-	@Override public abstract DomContainer clone();
+	@Override
+	public abstract DomContainer clone();
 	DomContainer(DomContainer other) {
 		size = other.size;
 		if (size > 0) {
@@ -577,7 +615,8 @@ public abstract class DomContainer extends DomContent {
 	 *            object to compare this container with
 	 * @return {@code true} if the two nodes are equal, {@code false} otherwise
 	 */
-	@Override public boolean equals(Object object) {
+	@Override
+	public boolean equals(Object object) {
 		if (this == object)
 			return true;
 		if (!(object instanceof DomContainer))
@@ -596,7 +635,8 @@ public abstract class DomContainer extends DomContent {
 	 * 
 	 * @return container's hash code
 	 */
-	@Override public int hashCode() {
+	@Override
+	public int hashCode() {
 		int hash = getClass().hashCode();
 		hash = 31 * hash + size;
 		for (int i = 0; i < size; ++i)
