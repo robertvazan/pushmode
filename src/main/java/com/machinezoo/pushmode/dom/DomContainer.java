@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.*;
 import java.lang.reflect.*;
 import java.util.*;
 import java.util.stream.*;
+import com.machinezoo.stagean.*;
 
 /**
  * Base class for {@link DomElement} and {@link DomFragment}.
@@ -35,6 +36,7 @@ import java.util.stream.*;
  * Since using the high-level builder and query API might be too much overhead in some cases,
  * a low-level raw access API is provided too. It is application's responsibility to use the raw API correctly.
  */
+@NoTests
 public abstract class DomContainer extends DomContent {
 	DomContainer() {
 	}
@@ -57,6 +59,7 @@ public abstract class DomContainer extends DomContent {
 	 * @see #rawChildren()
 	 * @see #rawChildren(int, DomContent[])
 	 */
+	@DraftApi
 	public int rawChildCount() {
 		return size;
 	}
@@ -75,6 +78,7 @@ public abstract class DomContainer extends DomContent {
 	 * @see #rawChildCount()
 	 * @see #rawChildren(int, DomContent[])
 	 */
+	@DraftApi
 	public DomContent[] rawChildren() {
 		return children;
 	}
@@ -105,6 +109,7 @@ public abstract class DomContainer extends DomContent {
 	 * @see #rawChildren()
 	 * @see #add(DomContent)
 	 */
+	@DraftApi
 	public void rawChildren(int count, DomContent[] children) {
 		this.children = children;
 		this.size = count;
@@ -303,6 +308,7 @@ public abstract class DomContainer extends DomContent {
 	 * @see #elements()
 	 * @see #descendants()
 	 */
+	@DraftCode("sublists are copies instead of views")
 	public List<DomContent> children() {
 		return new ChildList();
 	}
@@ -538,6 +544,7 @@ public abstract class DomContainer extends DomContent {
 	 * Many elements are text-only and we need a convenient way to get the text out of them.
 	 * Additionally, it is sometimes useful to extract plaintext from richtext DOM tree.
 	 */
+	@DraftApi("see base class")
 	@Override
 	public String text() {
 		return children().stream().map(DomContent::text).collect(joining());
@@ -555,6 +562,7 @@ public abstract class DomContainer extends DomContent {
 	 * This is a raw API that merely marks the container as frozen
 	 * without performing any other tasks like {@link #freeze()}.
 	 */
+	@DraftApi
 	public void rawFreeze() {
 		frozen = true;
 	}

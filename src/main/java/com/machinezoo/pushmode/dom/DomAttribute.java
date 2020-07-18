@@ -2,12 +2,18 @@
 package com.machinezoo.pushmode.dom;
 
 import java.util.*;
+import com.machinezoo.stagean.*;
 
 /*
  * Even though elements have custom representation for attributes,
  * we still need an attribute object in order to provide dynamic attribute API.
  * Like in element's internal representation, null value means boolean attribute.
  */
+/**
+ * A name-value pair representing element attribute.
+ */
+@StubDocs
+@NoTests
 public class DomAttribute {
 	private final String name;
 	public String name() {

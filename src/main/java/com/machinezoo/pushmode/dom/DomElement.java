@@ -11,6 +11,7 @@ import com.machinezoo.noexception.*;
 import com.machinezoo.pushmode.*;
 import com.machinezoo.pushmode.bindings.*;
 import com.machinezoo.pushmode.events.*;
+import com.machinezoo.stagean.*;
 
 /**
  * Element in PushMode DOM tree.
@@ -41,6 +42,7 @@ import com.machinezoo.pushmode.events.*;
  * Application can {@link #freeze()} DOM subtree to prevent its accidental modification.
  * This is particularly useful for DOM trees in caches that are likely to be read by multiple threads.
  */
+@NoTests
 public class DomElement extends DomContainer implements DomAttributes {
 	/*
 	 * Element is primarily defined by its tagname.
@@ -48,9 +50,11 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * That's why we provide constructor with tagname parameter but no default constructor.
 	 */
 	private String tagname;
+	@NoDocs
 	public String tagname() {
 		return tagname;
 	}
+	@NoDocs
 	public DomElement(String tagname) {
 		Objects.requireNonNull(tagname);
 		this.tagname = tagname;
@@ -167,9 +171,13 @@ public class DomElement extends DomContainer implements DomAttributes {
 	/*
 	 * Allow direct access to the attribute array where performance matters.
 	 */
+	@DraftApi
+	@NoDocs
 	public String[] rawAttributes() {
 		return attributes;
 	}
+	@DraftApi
+	@NoDocs
 	public void rawAttributes(String[] attributes) {
 		this.attributes = attributes;
 	}
@@ -213,6 +221,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		attributes[at] = name;
 		attributes[at + 1] = value;
 	}
+	@NoDocs
 	@Override
 	public DomElement unset(String name) {
 		touch();
@@ -256,6 +265,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * We could provide overloads that take primitive wrappers,
 	 * but that's a rare use case that would cost us dozens of rarely used specialized setters.
 	 */
+	@NoDocs
 	@Override
 	public DomElement set(String name, String value) {
 		if (value != null)
@@ -264,6 +274,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 			unset(name);
 		return this;
 	}
+	@NoDocs
 	@Override
 	public DomElement set(String name, boolean value) {
 		if (value)
@@ -272,33 +283,40 @@ public class DomElement extends DomContainer implements DomAttributes {
 			unset(name);
 		return this;
 	}
+	@NoDocs
 	@Override
 	public DomElement set(String name) {
 		setNullable(name, null);
 		return this;
 	}
+	@NoDocs
 	@Override
 	public DomElement set(String name, int value) {
 		setNullable(name, Integer.toString(value));
 		return this;
 	}
+	@NoDocs
 	@Override
 	public DomElement set(String name, double value) {
 		setNullable(name, Double.toString(value));
 		return this;
 	}
+	@NoDocs
 	@Override
 	public DomElement set(DomAttribute attribute) {
 		if (attribute != null)
 			setNullable(attribute.name(), attribute.value());
 		return this;
 	}
+	@NoDocs
+	@DraftApi("should be probably Collection instead of Iterable")
 	public DomElement set(Iterable<DomAttribute> attributes) {
 		if (attributes != null)
 			for (DomAttribute attribute : attributes)
 				set(attribute);
 		return this;
 	}
+	@NoDocs
 	public DomElement set(Stream<DomAttribute> attributes) {
 		if (attributes != null)
 			attributes.forEach(this::set);
@@ -314,6 +332,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * The current implementation returns a copy, which is mostly justified by simplicity/laziness.
 	 * Live view could be implemented and this option is not excluded from future development.
 	 */
+	@NoDocs
 	@Override
 	public List<DomAttribute> attributes() {
 		List<DomAttribute> result = new ArrayList<>();
@@ -326,6 +345,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return result;
 	}
+	@NoDocs
 	@Override
 	public DomAttribute attribute(String name) {
 		if (attributes != null) {
@@ -338,6 +358,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return null;
 	}
+	@NoDocs
 	@Override
 	public String attributeAsString(String name) {
 		DomAttribute attribute = attribute(name);
@@ -345,10 +366,12 @@ public class DomElement extends DomContainer implements DomAttributes {
 			return null;
 		return attribute.value();
 	}
+	@NoDocs
 	@Override
 	public boolean attributeAsBoolean(String name) {
 		return attribute(name) != null;
 	}
+	@NoDocs
 	@Override
 	public OptionalInt attributeAsInt(String name) {
 		DomAttribute attribute = attribute(name);
@@ -358,6 +381,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 			return OptionalInt.empty();
 		return OptionalInt.of(Integer.parseInt(attribute.value()));
 	}
+	@NoDocs
 	@Override
 	public OptionalDouble attributeAsDouble(String name) {
 		DomAttribute attribute = attribute(name);
@@ -379,12 +403,18 @@ public class DomElement extends DomContainer implements DomAttributes {
 	/*
 	 * Allow direct access to the listener array where performance matters.
 	 */
+	@DraftApi
+	@NoDocs
 	public DomListener[] rawListeners() {
 		return listeners;
 	}
+	@DraftApi
+	@NoDocs
 	public void rawListeners(DomListener[] listeners) {
 		this.listeners = listeners;
 	}
+	@DraftApi
+	@NoDocs
 	public DomElement subscribe(DomListener listener) {
 		touch();
 		if (listener != null) {
@@ -411,6 +441,8 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return this;
 	}
+	@DraftApi
+	@NoDocs
 	public List<DomListener> listeners() {
 		List<DomListener> result = new ArrayList<>();
 		if (listeners != null) {
@@ -494,6 +526,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * There is however one child query API that cannot be defined on DomContainer.
 	 * It returns an element stream with this element prepended to its descendants.
 	 */
+	@NoDocs
 	public Stream<DomElement> descendantsAndSelf() {
 		return Stream.concat(Stream.of(this), descendants());
 	}
@@ -602,6 +635,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return hash;
 	}
+	@NoDocs
 	public DomElement assign(DomElement other) {
 		touch();
 		tagname = other.tagname;
@@ -640,6 +674,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	/*
 	 * Create poster frame that is devoid of listeners.
 	 */
+	@NoDocs
 	public DomElement toPoster() {
 		if (!frozen)
 			throw new IllegalStateException("Poster can be computed only from frozen DOM tree");
@@ -685,6 +720,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *            Event handler to add. If {@code null}, an empty event handler is added.
 	 * @return {@code this}
 	 */
+	@DraftApi
 	public DomElement onclick(Runnable handler) {
 		return subscribe(new ClickEvent(handler));
 	}
@@ -698,6 +734,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *            Event handler to add. If {@code null}, an empty event handler is added.
 	 * @return {@code this}
 	 */
+	@DraftApi
 	public DomElement onchange(Runnable handler) {
 		return subscribe(new ChangeEvent(handler));
 	}
@@ -711,6 +748,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 *            Event handler to add. If {@code null}, an empty event handler is added.
 	 * @return {@code this}
 	 */
+	@DraftApi
 	public DomElement oninput(Runnable handler) {
 		return subscribe(new InputEvent(handler));
 	}
@@ -740,6 +778,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * @throws NullPointerException
 	 *             The {@code setter} parameter is {@code null}.
 	 */
+	@DraftApi
 	public DomElement checked(boolean value, Consumer<Boolean> setter) {
 		Objects.requireNonNull(setter);
 		checked(value);
@@ -770,6 +809,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * @throws NullPointerException
 	 *             The {@code setter} parameter is {@code null}.
 	 */
+	@DraftApi
 	public DomElement checked(Boolean value, Consumer<Boolean> setter) {
 		return checked(value != null && value, setter);
 	}
@@ -796,6 +836,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 	 * @throws NullPointerException
 	 *             The {@code setter} parameter is {@code null}.
 	 */
+	@DraftApi
 	public DomElement value(String value, Consumer<String> setter) {
 		Objects.requireNonNull(setter);
 		if (value == null)
@@ -805,6 +846,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		oninput((Runnable)null);
 		return this;
 	}
+	@NoDocs
 	public static DomElement fromXml(org.w3c.dom.Element xml) {
 		DomElement element = new DomElement(xml.getTagName());
 		NamedNodeMap attributes = xml.getAttributes();
@@ -837,6 +879,7 @@ public class DomElement extends DomContainer implements DomAttributes {
 		}
 		return element;
 	}
+	@NoDocs
 	public static DomElement fromXml(String serialized) {
 		return Exceptions.sneak().get(() -> {
 			javax.xml.parsers.DocumentBuilder builder = javax.xml.parsers.DocumentBuilderFactory.newInstance().newDocumentBuilder();

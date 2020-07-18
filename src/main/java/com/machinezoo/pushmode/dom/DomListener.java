@@ -2,7 +2,14 @@
 package com.machinezoo.pushmode.dom;
 
 import com.fasterxml.jackson.databind.node.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Base class for events and input bindings.
+ */
+@StubDocs
+@DraftApi
+@NoTests
 public abstract class DomListener {
 	public abstract DomListener combine(DomListener other);
 	public abstract boolean isSameSubscription(DomListener other);

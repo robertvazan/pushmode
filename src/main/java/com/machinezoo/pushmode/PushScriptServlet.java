@@ -11,7 +11,14 @@ import javax.servlet.http.*;
 import org.apache.commons.io.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.noexception.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Servlet for pushmode.js.
+ */
+@StubDocs
+@DraftApi("might be better done on app or framework level (CDN, busters, ...)")
+@DraftCode("minify and compress, proper ETag parsing")
 public class PushScriptServlet extends ReactiveServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String buster;

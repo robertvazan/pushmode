@@ -2,12 +2,19 @@
 package com.machinezoo.pushmode.dom;
 
 import java.util.*;
+import com.machinezoo.stagean.*;
 
 /*
  * DOM tree serializer that outputs HTML5, SVG, or HTML/SVG fragments.
  * It is implemented as a separate object rather than a method on Dom* classes
  * in order to keep Dom* classes limited to data structure role.
  */
+/**
+ * Formatter (serializer) for DOM trees.
+ */
+@StubDocs
+@DraftApi
+@NoTests
 public class DomFormatter {
 	/*
 	 * We want String output nearly always.

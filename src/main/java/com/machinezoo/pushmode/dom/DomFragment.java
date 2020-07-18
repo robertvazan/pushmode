@@ -3,6 +3,7 @@ package com.machinezoo.pushmode.dom;
 
 import java.util.*;
 import java.util.stream.*;
+import com.machinezoo.stagean.*;
 
 /**
  * Fragment of PushMode DOM tree.
@@ -17,6 +18,7 @@ import java.util.stream.*;
  * which enables methods to pass around any combination of elements and plain text
  * as {@code DomFragment}, including an empty fragment, instead of just a single {@link DomElement}.
  */
+@NoTests
 public final class DomFragment extends DomContainer {
 	/**
 	 * Creates an empty DOM fragment.
@@ -193,6 +195,8 @@ public final class DomFragment extends DomContainer {
 	 * We could define the same function as a non-static method on DomContent,
 	 * which would be used implicitly as a separator, but then we wouldn't have the overload with plain string separator.
 	 */
+	@NoDocs
+	@DraftApi("separate overloads for Collection and Stream")
 	public static DomFragment join(DomContent separator, Iterable<? extends DomContent> items) {
 		DomFragment result = new DomFragment();
 		boolean first = true;
@@ -205,6 +209,8 @@ public final class DomFragment extends DomContainer {
 		}
 		return result;
 	}
+	@NoDocs
+	@DraftApi("separate overloads for Collection and Stream")
 	public static DomFragment join(String separator, Iterable<? extends DomContent> items) {
 		return join(new DomText(separator), items);
 	}

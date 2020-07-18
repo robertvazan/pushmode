@@ -4,7 +4,6 @@ package com.machinezoo.pushmode.internal.diffing;
 import java.util.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.node.*;
-import com.machinezoo.pushmode.*;
 import com.machinezoo.pushmode.dom.*;
 
 public class DocumentPatch {

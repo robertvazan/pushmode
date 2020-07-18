@@ -679,10 +679,13 @@ def file_header(subpackage=''):
 def element_factory_source(abbreviation, classname, elements):
     output(file_header())
     output('''\
+        import com.machinezoo.stagean.*;
+
         /**
          * ''' + abbreviation + ''' element constructors.
          * Using methods of this class is preferable to instantiating element classes directly.
          */
+        @NoTests
         public abstract class ''' + classname + ''' {
     ''')
     for element in elements:
@@ -710,7 +713,13 @@ def attributes_source():
     output(file_header())
     output('''\
         import java.util.*;
+        import com.machinezoo.stagean.*;
         
+        /**
+         * Strongly typed attribute setters and getters.
+         */
+        @DraftDocs("longer summary, non-default methods")
+        @NoTests
         public interface DomAttributes {
             DomElement set(String name, String value);
             DomElement set(String name, boolean value);

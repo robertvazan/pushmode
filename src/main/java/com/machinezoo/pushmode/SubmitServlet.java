@@ -12,9 +12,15 @@ import com.fasterxml.jackson.databind.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.noexception.*;
 import com.machinezoo.pushmode.internal.messages.*;
+import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 import io.micrometer.core.instrument.Timer;
 
+/**
+ * Servlet accepting user input sent from pushmode.js.
+ */
+@StubDocs
+@DraftApi("switch to websocket")
 public class SubmitServlet extends ReactiveServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Timer timer = Metrics.timer("pushmode.submit");

@@ -1,6 +1,8 @@
 // Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.dom;
 
+import com.machinezoo.stagean.*;
+
 /*
  * Text nodes are necessary in order to have one base class for all content in elements.
  * The alternative is to allow mixed content in elements.
@@ -12,6 +14,7 @@ package com.machinezoo.pushmode.dom;
  * <p>
  * {@link DomText}, being immutable, is always safe to access by multiple threads.
  */
+@DraftTests
 public class DomText extends DomContent {
 	private final String text;
 	/**

@@ -12,6 +12,7 @@ import com.machinezoo.noexception.*;
 import com.machinezoo.pushmode.dom.*;
 import com.machinezoo.pushmode.internal.diffing.*;
 import com.machinezoo.pushmode.internal.messages.*;
+import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 import io.micrometer.core.instrument.Timer;
 
@@ -64,6 +65,7 @@ public abstract class PushPage {
 	 * 
 	 * @return Page's event loop.
 	 */
+	@DraftApi("some way to specify the underlying thread pool")
 	public ExecutorService executor() {
 		return executor;
 	}
@@ -94,10 +96,12 @@ public abstract class PushPage {
 		random.nextBytes(bytes);
 		return Base64.getUrlEncoder().encodeToString(bytes).replace("_", "").replace("-", "").replace("=", "");
 	}
+	@NoDocs
 	public void serve(ReactiveServletRequest request) {
 		this.request = request;
 		OwnerTrace.of(this).tag("http.url", request.url());
 	}
+	@NoDocs
 	public void serve(ReactiveServletResponse response) {
 	}
 	private final ReactiveVariable<Boolean> poster = OwnerTrace.of(new ReactiveVariable<Boolean>(true))
@@ -122,6 +126,7 @@ public abstract class PushPage {
 	public boolean poster() {
 		return poster.get();
 	}
+	@NoDocs
 	@Override
 	public String toString() {
 		return request.toString();
@@ -145,6 +150,7 @@ public abstract class PushPage {
 		.parent(this)
 		.tag("role", "output")
 		.target();
+	@NoDocs
 	public void start() {
 		loop.start();
 	}
@@ -171,6 +177,8 @@ public abstract class PushPage {
 		for (DomListener listener : elements.get(0).listeners())
 			message.match(listener);
 	}
+	@NoDocs
+	@DraftApi("mind testability")
 	public PageFrame frame(long requestSeq) {
 		if (requestSeq < 0)
 			throw new IllegalArgumentException();
@@ -293,6 +301,7 @@ public abstract class PushPage {
 			.document(document)
 			.inputSeq(inputSeq());
 	}
+	@NoDocs
 	public static PushPage current() {
 		PageExecutor executor = PageExecutor.current();
 		return executor != null ? executor.page : null;

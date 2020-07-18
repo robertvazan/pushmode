@@ -3,7 +3,14 @@ package com.machinezoo.pushmode.dom;
 
 import java.util.*;
 import com.fasterxml.jackson.databind.node.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Base class for event subscriptions.
+ */
+@StubDocs
+@DraftApi
+@NoTests
 public abstract class DomEvent extends DomListener {
 	protected final Runnable handler;
 	public Runnable handler() {

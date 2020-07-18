@@ -1,6 +1,8 @@
 // Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.dom;
 
+import com.machinezoo.stagean.*;
+
 /**
  * Base class for all PushMode DOM nodes that can be added to an element,
  * specifically {@link DomElement}, {@link DomText}, and {@link DomFragment}.
@@ -21,6 +23,7 @@ package com.machinezoo.pushmode.dom;
  * DOM content is safe to read concurrently by multiple threads.
  * Write operations cannot be concurrent with reads or other writes.
  */
+@NoTests
 public abstract class DomContent implements Cloneable {
 	DomContent() {
 	}
@@ -95,6 +98,7 @@ public abstract class DomContent implements Cloneable {
 	 * 
 	 * @return all text content in this node
 	 */
+	@DraftApi("perhaps add space around block elements and some other elements (br), perhaps normalize whitespace")
 	public abstract String text();
 	/**
 	 * Gets serialized HTML code for this node for debugging purposes.

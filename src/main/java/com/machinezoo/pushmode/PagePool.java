@@ -5,8 +5,15 @@ import java.time.*;
 import java.util.*;
 import org.slf4j.*;
 import com.machinezoo.noexception.*;
+import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 
+/**
+ * A set of page IDs and associated page instances the server knows about.
+ */
+@StubDocs
+@DraftApi("should be pluggable and configurable, allow off-memory storage")
+@StubCode("use existing cache implementations")
 public class PagePool {
 	private static final PagePool instance = new PagePool();
 	public static PagePool instance() {

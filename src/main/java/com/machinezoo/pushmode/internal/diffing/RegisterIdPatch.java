@@ -1,7 +1,6 @@
 // Part of PushMode: https://pushmode.machinezoo.com
 package com.machinezoo.pushmode.internal.diffing;
 
-import com.machinezoo.pushmode.*;
 import com.machinezoo.pushmode.dom.*;
 
 class RegisterIdPatch extends IdPatch {

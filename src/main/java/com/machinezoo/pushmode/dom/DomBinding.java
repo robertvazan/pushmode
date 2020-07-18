@@ -4,7 +4,14 @@ package com.machinezoo.pushmode.dom;
 import java.util.*;
 import java.util.function.*;
 import com.fasterxml.jackson.databind.node.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Base class for attribute bindings in input elements.
+ */
+@StubDocs
+@DraftApi
+@NoTests
 public abstract class DomBinding extends DomListener {
 	private final String value;
 	public String value() {

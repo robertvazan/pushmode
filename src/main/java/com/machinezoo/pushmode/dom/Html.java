@@ -2,10 +2,13 @@
 // Generated code. Edit generate.py instead.
 package com.machinezoo.pushmode.dom;
 
+import com.machinezoo.stagean.*;
+
 /**
  * HTML element constructors.
  * Using methods of this class is preferable to instantiating element classes directly.
  */
+@NoTests
 public abstract class Html {
 	/**
 	 * Creates new <code>&lt;a&gt;</code> element.

@@ -3,7 +3,13 @@
 package com.machinezoo.pushmode.dom;
 
 import java.util.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Strongly typed attribute setters and getters.
+ */
+@DraftDocs("longer summary, non-default methods")
+@NoTests
 public interface DomAttributes {
 	DomElement set(String name, String value);
 	DomElement set(String name, boolean value);

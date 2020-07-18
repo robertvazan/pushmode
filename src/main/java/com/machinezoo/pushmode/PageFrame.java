@@ -5,7 +5,13 @@ import java.nio.charset.*;
 import com.fasterxml.jackson.databind.node.*;
 import com.machinezoo.pushmode.dom.*;
 import com.machinezoo.pushmode.internal.diffing.*;
+import com.machinezoo.stagean.*;
 
+/**
+ * Represents one version of the page.
+ */
+@StubDocs
+@DraftApi
 public class PageFrame {
 	private final PushPage page;
 	public PushPage page() {

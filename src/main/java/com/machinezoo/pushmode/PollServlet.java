@@ -12,8 +12,14 @@ import com.machinezoo.hookless.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.hookless.time.*;
 import com.machinezoo.noexception.*;
+import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 
+/**
+ * Long-poll servlet polling for changes in the page.
+ */
+@StubDocs
+@DraftApi("switch to websocket")
 @SuppressWarnings("serial")
 public class PollServlet extends ReactiveServlet {
 	private static final Counter reloadCounter = Metrics.counter("pushmode.poll.reloads");
