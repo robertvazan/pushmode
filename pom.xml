@@ -151,6 +151,9 @@
 					<notimestamp>true</notimestamp>
 					<!-- Internal packages should never show up in javadoc. In the future, they will not be exposed from the module. -->
 					<excludePackageNames>com.machinezoo.pushmode.internal.*</excludePackageNames>
+					<links>
+						<link>https://hookless.machinezoo.com/javadocs/servlets/</link>
+					</links>
 				</configuration>
 				<executions>
 					<execution>
