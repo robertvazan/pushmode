@@ -51,13 +51,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
-			<artifactId>hookless</artifactId>
-			<version>0.10.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
-			<version>0.2.1</version>
+			<version>0.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
