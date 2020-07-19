@@ -6,13 +6,13 @@
 
 PushMode is a server-side Java library that streams web app's HTML output down to the browser while user's actions are streamed back to the server. The only code the browser ever sees is a tiny JavaScript file. Application effectively runs all on the server, but interactivity is almost the same as if it was running in the browser. This architecture has its [advantages](https://pushmode.machinezoo.com/architecture-comparison). PushMode is reactive by default as it is based on [Hookless](https://hookless.machinezoo.com/).
 
-## Download ##
-
-PushMode is available from [Maven Central](https://search.maven.org/artifact/com.machinezoo.pushmode/pushmode). Further setup instructions are on the [website](https://pushmode.machinezoo.com/). PushMode is distributed under [Apache License 2.0](LICENSE).
-
 ## Status ##
 
 Class-level progress is tracked using [Stagean annotations](https://stagean.machinezoo.com/). Read-only streaming of HTML to the client is fairly stable. Streaming of user input to the server is early alpha. Browser APIs (e.g., history manipulation) aren't implemented at all.
+
+## Download ##
+
+PushMode is available from [Maven Central](https://search.maven.org/artifact/com.machinezoo.pushmode/pushmode). Further setup instructions are on the [website](https://pushmode.machinezoo.com/). PushMode is distributed under [Apache License 2.0](LICENSE).
 
 ## Documentation ##
 
