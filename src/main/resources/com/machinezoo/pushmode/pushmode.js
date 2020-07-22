@@ -12,7 +12,6 @@ var PushMode = PushMode || new function() {
 	function XhrLoop(servlet, processor) {
 		var xhr = null;
 		var currentData = null;
-		var healthy = false;
 		var delay = 10;
 		
 		function reload() {
@@ -37,16 +36,15 @@ var PushMode = PushMode || new function() {
 		function processResponse(args) {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
-					healthy = true;
 					currentData = null;
 					var response = xhr.responseText;
 					xhr = null;
 					processor(JSON.parse(response));
 				} else if (xhr.status === 204)
 					retry();
-				else if (healthy && xhr.status == 205)
+				else if (xhr.status == 205)
 					setTimeout(reload, 1);
-				else if (xhr.status == 205 || xhr.status === 404 || xhr.status === 405 || xhr.status === 403)
+				else if (xhr.status === 404 || xhr.status === 405 || xhr.status === 403)
 					setTimeout(reload, 10000);
 				else if (xhr.status == 0)
 					backoff();
