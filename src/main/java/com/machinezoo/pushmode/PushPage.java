@@ -8,7 +8,6 @@ import org.slf4j.*;
 import com.machinezoo.hookless.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.hookless.util.*;
-import com.machinezoo.noexception.*;
 import com.machinezoo.pushmode.dom.*;
 import com.machinezoo.pushmode.internal.diffing.*;
 import com.machinezoo.pushmode.internal.messages.*;
@@ -160,9 +159,12 @@ public abstract class PushPage {
 				return;
 			if (inputSeq > this.inputSeq.get())
 				throw new IllegalArgumentException("Input events submitted out of order.");
-			if (output.get().document() != null)
-				for (ListenerMessage message : messages)
-					dispatch(message);
+			/*
+			 * We don't care that we receive events before first frame is generated (which is always an error),
+			 * because elementIds below is empty in that case anyway, so no event handlers will actually run.
+			 */
+			for (ListenerMessage message : messages)
+				dispatch(message);
 			this.inputSeq.set(this.inputSeq.get() + messages.size());
 		});
 	}
@@ -182,6 +184,9 @@ public abstract class PushPage {
 	public PageFrame frame(long requestSeq) {
 		if (requestSeq < 0)
 			throw new IllegalArgumentException();
+		/*
+		 * This will propagate exception that terminated the page if there was one.
+		 */
 		PageFrame latest = output.get();
 		if (latest.outputSeq() == requestSeq)
 			return latest;
@@ -214,6 +219,10 @@ public abstract class PushPage {
 		.target();
 	private void run() {
 		try {
+			/*
+			 * If there was an exception before, then the loop was stopped and we couldn't have arrived here again.
+			 * That means reading output below cannot ever throw an exception.
+			 */
 			PageFrame previous = output.get();
 			/*
 			 * Don't do anything unless we have pending frame request from the client.
@@ -225,29 +234,22 @@ public abstract class PushPage {
 				 */
 				if (generatorSeq.get() < pollSeq.get() && !generator.valid()) {
 					generator.advance();
-					ReactiveValue<PageFrame> output = generator.output();
+					ReactiveValue<PageFrame> generated = generator.output();
 					/*
-					 * Frame production should never fail. Tolerate blocking exception of course.
-					 */
-					if (!output.blocking() && output.exception() != null)
-						Exceptions.log(logger).handle(output.exception());
-					/*
-					 * The generator has now produced new frame, but we will accept it only if it doesn't block and it is not an exception.
+					 * The generator has now produced new frame, but we will accept it only if it doesn't block.
 					 * Otherwise we will just wait for the generator to be invalidated and we will advance it again.
-					 * 
-					 * Filtering of exceptions means that we will block reactive servlet indefinitely, hoping things will get better later.
-					 * TODO: Ideally, we should propagate the exception through page API,
-					 * so that 500 response can be returned if this happens to a poster frame
-					 * and so that tests can easily observe unexpected exceptions.
 					 */
-					if (!output.blocking() && output.exception() == null)
+					if (!generated.blocking())
 						generatorSeq.set(generatorSeq.get() + 1);
 				}
 				/*
-				 * If the generator has a frame ready, send it. Ready means it has the right sequence, it is not blocking, and it is not an error.
+				 * If the generator has a frame ready, send it. Ready means it has the right sequence and it is not blocking.
 				 * We don't care whether it was already invalidated or not. We will take stale frame if needed.
 				 */
-				if ((long)generatorSeq.get() == (long)pollSeq.get() && !generator.output().blocking() && generator.output().exception() == null) {
+				if ((long)generatorSeq.get() == (long)pollSeq.get() && !generator.output().blocking()) {
+					/*
+					 * If page rendering ended with an exception, the exception will be propagated from here.
+					 */
 					PageFrame next = generator.output().get();
 					if (previous.outputSeq() < 0) {
 						elementIds.seed(next.document());
@@ -278,8 +280,22 @@ public abstract class PushPage {
 					poster.set(false);
 				}
 			}
-		} catch (Throwable e) {
-			Exceptions.log(logger).handle(e);
+		} catch (Throwable ex) {
+			/*
+			 * We aren't going to attempt any sort of recovery, because exception caught here means serious flaw in the app.
+			 * Apps (or app frameworks) should have their own exception handler that displays nice in-page message.
+			 * 
+			 * The code below will disable further rendering and thus all HTML streaming.
+			 * Event handling will continue as well as everything else using page executor.
+			 * Halting page executor might get the program into extreme error conditions that are unlikely to be handled well.
+			 * Merely disabling streaming on our side is safe. Apps should never require continuous rendering for internal consistency.
+			 */
+			loop.stop();
+			/*
+			 * This will cause servlets to fail with 5xx error codes. This is especially important for the initial request.
+			 */
+			output.value(new ReactiveValue<>(ex));
+			logger.error("Page was killed by exception.", ex);
 		}
 	}
 	long inputSeq() {

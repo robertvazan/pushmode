@@ -67,6 +67,9 @@ public class PollServlet extends ReactiveServlet {
 			try {
 				frame = page.frame(sequence);
 			} catch (Throwable ex) {
+				/*
+				 * Exception was already logged by PushPage once. We don't want to log it every time the page is polled.
+				 */
 				exceptionCounter.increment();
 				return new ReactiveServletResponse().status(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 			}
