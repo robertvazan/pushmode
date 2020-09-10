@@ -4,7 +4,7 @@
 
 	<groupId>com.machinezoo.pushmode</groupId>
 	<artifactId>pushmode</artifactId>
-	<version>0.7.10</version>
+	<version>0.7.11</version>
 	<packaging>jar</packaging>
 
 	<name>PushMode</name>
