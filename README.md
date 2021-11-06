@@ -1,5 +1,5 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.machinezoo.pushmode/pushmode)](https://search.maven.org/artifact/com.machinezoo.pushmode/pushmode)
-[![Build Status](https://travis-ci.com/robertvazan/pushmode.svg?branch=master)](https://travis-ci.com/robertvazan/pushmode)
+[![Build Status](https://travis-ci.com/robertvazan/pushmode.svg?branch=master)](https://app.travis-ci.com/github/robertvazan/pushmode)
 [![Coverage Status](https://codecov.io/gh/robertvazan/pushmode/branch/master/graph/badge.svg)](https://codecov.io/gh/robertvazan/pushmode)
 
 # PushMode HTML streaming for Java #
