@@ -1,15 +1,15 @@
 // Part of PushMode: https://pushmode.machinezoo.com
-package com.machinezoo.pushmode.internal.diffing;
+package com.machinezoo.pushmode.diffing;
 
 import com.machinezoo.pushmode.dom.*;
 
-class RegisterIdPatch extends IdPatch {
+class ReleaseIdPatch extends IdPatch {
 	private final DomElement element;
-	RegisterIdPatch(DomElement element) {
+	ReleaseIdPatch(DomElement element) {
 		this.element = element;
 	}
 	@Override
 	void updateIdMap(ElementIdIndex index) {
-		index.add(element);
+		index.remove(element);
 	}
 }

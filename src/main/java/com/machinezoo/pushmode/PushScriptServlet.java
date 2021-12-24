@@ -7,11 +7,11 @@ import java.nio.charset.*;
 import java.security.*;
 import java.util.*;
 import java.util.regex.*;
-import javax.servlet.http.*;
 import org.apache.commons.io.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.noexception.*;
 import com.machinezoo.stagean.*;
+import jakarta.servlet.http.*;
 
 /**
  * Servlet for pushmode.js.

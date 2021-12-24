@@ -4,17 +4,17 @@ package com.machinezoo.pushmode;
 import java.nio.*;
 import java.nio.charset.*;
 import java.util.*;
-import javax.servlet.http.*;
 import org.apache.http.*;
 import org.apache.http.client.utils.*;
 import org.slf4j.*;
 import com.fasterxml.jackson.databind.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.noexception.*;
-import com.machinezoo.pushmode.internal.messages.*;
+import com.machinezoo.pushmode.messages.*;
 import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 import io.micrometer.core.instrument.Timer;
+import jakarta.servlet.http.*;
 
 /**
  * Servlet accepting user input sent from pushmode.js.

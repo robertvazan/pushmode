@@ -3,8 +3,8 @@ package com.machinezoo.pushmode;
 
 import java.nio.charset.*;
 import com.fasterxml.jackson.databind.node.*;
+import com.machinezoo.pushmode.diffing.*;
 import com.machinezoo.pushmode.dom.*;
-import com.machinezoo.pushmode.internal.diffing.*;
 import com.machinezoo.stagean.*;
 
 /**
@@ -45,10 +45,10 @@ public class PageFrame {
 		return this;
 	}
 	private DocumentPatch patch;
-	public DocumentPatch patch() {
+	DocumentPatch patch() {
 		return patch;
 	}
-	public PageFrame patch(DocumentPatch patch) {
+	PageFrame patch(DocumentPatch patch) {
 		this.patch = patch;
 		return this;
 	}

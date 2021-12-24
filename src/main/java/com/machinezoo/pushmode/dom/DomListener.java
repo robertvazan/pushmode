@@ -14,7 +14,6 @@ public abstract class DomListener {
 	public abstract DomListener combine(DomListener other);
 	public abstract boolean isSameSubscription(DomListener other);
 	public abstract String listenerTypeCode();
-	public abstract String listenerMapKey();
 	public void subscribeJson(ObjectNode json) {
 		subscribeJsonCommon(json);
 	}

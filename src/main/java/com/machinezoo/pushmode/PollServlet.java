@@ -4,7 +4,6 @@ package com.machinezoo.pushmode;
 import java.nio.*;
 import java.nio.charset.*;
 import java.time.*;
-import javax.servlet.http.*;
 import org.apache.http.*;
 import org.apache.http.client.utils.*;
 import com.fasterxml.jackson.databind.*;
@@ -14,6 +13,7 @@ import com.machinezoo.hookless.time.*;
 import com.machinezoo.noexception.*;
 import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
+import jakarta.servlet.http.*;
 
 /**
  * Long-poll servlet polling for changes in the page.

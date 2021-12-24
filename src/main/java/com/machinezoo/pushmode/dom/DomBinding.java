@@ -44,10 +44,6 @@ public abstract class DomBinding extends DomListener {
 		return "b";
 	}
 	@Override
-	public String listenerMapKey() {
-		return attribute();
-	}
-	@Override
 	public void subscribeJson(ObjectNode json) {
 		super.subscribeJson(json);
 		if (datatype() == Boolean.class)

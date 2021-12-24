@@ -39,15 +39,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.release>11</maven.compiler.release>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
-			<version>0.4.1</version>
+			<version>0.5.0</version>
 		</dependency>
 		<!-- Used for JSON messages exchanged with client-side JS. -->
 		<dependency>
@@ -90,6 +89,12 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<!-- Needed for Java 11. -->
+					<!-- Contains fix for https://issues.apache.org/jira/browse/MCOMPILER-289 -->
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+				</plugin>
 				<plugin>
 					<!-- Older surefire versions did not support JUnit 5. -->
 					<artifactId>maven-surefire-plugin</artifactId>
@@ -140,8 +145,9 @@
 				<version>3.2.0</version>
 				<configuration>
 					<notimestamp>true</notimestamp>
-					<!-- Internal packages should never show up in javadoc. In the future, they will not be exposed from the module. -->
-					<excludePackageNames>com.machinezoo.pushmode.internal.*</excludePackageNames>
+					<bottom>
+						<![CDATA[<!-- No copyright message. -->]]>
+					</bottom>
 					<links>
 						<link>https://hookless.machinezoo.com/javadocs/servlets/</link>
 					</links>

@@ -50,10 +50,6 @@ public abstract class DomEvent extends DomListener {
 		return "e";
 	}
 	@Override
-	public String listenerMapKey() {
-		return name();
-	}
-	@Override
 	public void subscribeJson(ObjectNode json) {
 		super.subscribeJson(json);
 		json.put("v", handler == null);

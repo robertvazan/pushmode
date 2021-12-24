@@ -1,5 +1,5 @@
 // Part of PushMode: https://pushmode.machinezoo.com
-package com.machinezoo.pushmode.internal.diffing;
+package com.machinezoo.pushmode.diffing;
 
 import com.fasterxml.jackson.databind.*;
 

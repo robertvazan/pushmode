@@ -1,5 +1,5 @@
 // Part of PushMode: https://pushmode.machinezoo.com
-package com.machinezoo.pushmode.internal.diffing;
+package com.machinezoo.pushmode.diffing;
 
 import java.util.*;
 import com.machinezoo.pushmode.dom.*;

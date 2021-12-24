@@ -1,5 +1,5 @@
 // Part of PushMode: https://pushmode.machinezoo.com
-package com.machinezoo.pushmode.internal.messages;
+package com.machinezoo.pushmode.messages;
 
 import com.fasterxml.jackson.databind.*;
 import com.machinezoo.pushmode.dom.*;
