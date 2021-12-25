@@ -13,9 +13,17 @@ module com.machinezoo.pushmode {
 	exports com.machinezoo.pushmode.dom;
 	exports com.machinezoo.pushmode.events;
 	exports com.machinezoo.pushmode.bindings;
+	/*
+	 * XML tree conversions should be in a separate library. Perhaps have several libraries for different XML parsers.
+	 * It would be of course preferable to have one standard XML tree supported, but java.xml is rather unpopular.
+	 * PushMode should have only non-transitive dependency for conversions to/from serialized XML.
+	 */
 	requires transitive java.xml;
 	requires com.machinezoo.stagean;
 	requires com.machinezoo.hookless;
+	/*
+	 * There should be a separate pushmode-servlets library. Core library should not depend on Jakarta.
+	 */
 	requires transitive com.machinezoo.hookless.servlets;
 	/*
 	 * Temporary transitive dependency needed by DomListener and subclasses, which hardcode JSON serialization via Jackson.
