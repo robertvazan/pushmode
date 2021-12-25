@@ -14,12 +14,9 @@ module com.machinezoo.pushmode {
 	exports com.machinezoo.pushmode.events;
 	exports com.machinezoo.pushmode.bindings;
 	requires transitive java.xml;
-	requires jakarta.servlet;
 	requires com.machinezoo.stagean;
-	requires com.machinezoo.noexception;
 	requires com.machinezoo.hookless;
 	requires transitive com.machinezoo.hookless.servlets;
-	requires com.fasterxml.jackson.core;
 	/*
 	 * Temporary transitive dependency needed by DomListener and subclasses, which hardcode JSON serialization via Jackson.
 	 * A better solution needs to be found in the future. We shouldn't hardcode JSON protocol and certainly not Jackson library.
@@ -28,6 +25,4 @@ module com.machinezoo.pushmode {
 	requires org.apache.commons.io;
 	requires org.apache.httpcomponents.httpclient;
 	requires org.apache.httpcomponents.httpcore;
-	requires micrometer.core;
-	requires org.slf4j;
 }
