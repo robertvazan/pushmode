@@ -46,13 +46,7 @@
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
-			<version>0.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<version>5.0.0</version>
-			<scope>provided</scope>
+			<version>0.5.2</version>
 		</dependency>
 		<!-- Used for JSON messages exchanged with client-side JS. -->
 		<dependency>
@@ -154,9 +148,6 @@
 					<bottom>
 						<![CDATA[<!-- No copyright message. -->]]>
 					</bottom>
-					<links>
-						<link>https://hookless.machinezoo.com/javadocs/servlets/</link>
-					</links>
 				</configuration>
 				<executions>
 					<execution>

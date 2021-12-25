@@ -22,9 +22,15 @@ module com.machinezoo.pushmode {
 	requires com.machinezoo.stagean;
 	requires com.machinezoo.hookless;
 	/*
-	 * There should be a separate pushmode-servlets library. Core library should not depend on Jakarta.
+	 * There should be a separate pushmode-servlets library. Core library should not depend on Jakarta servlet API.
+	 * Transitive, because we are providing a set of default servlets.
 	 */
 	requires transitive com.machinezoo.hookless.servlets;
+	/*
+	 * SLF4J is pulled in transitively via noexception and then via hookless,
+	 * but the transitive dependency will be removed in future versions of noexception.
+	 */
+	requires org.slf4j;
 	/*
 	 * Temporary transitive dependency needed by DomListener and subclasses, which hardcode JSON serialization via Jackson.
 	 * A better solution needs to be found in the future. We shouldn't hardcode JSON protocol and certainly not Jackson library.
@@ -33,4 +39,5 @@ module com.machinezoo.pushmode {
 	requires org.apache.commons.io;
 	requires org.apache.httpcomponents.httpclient;
 	requires org.apache.httpcomponents.httpcore;
+	requires micrometer.core;
 }
