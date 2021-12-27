@@ -45,6 +45,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
+			<artifactId>hookless</artifactId>
+			<version>0.14.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
 			<version>0.5.2</version>
 		</dependency>
@@ -148,6 +153,12 @@
 					<bottom>
 						<![CDATA[<!-- No copyright message. -->]]>
 					</bottom>
+					<!-- Explicit link list, because detectLinks would cause every CI build to fail. -->
+					<!-- CI build is configured to fail on javadoc warnings and we want to keep that. -->
+					<links>
+						<link>https://stagean.machinezoo.com/javadoc/</link>
+						<link>https://hookless.machinezoo.com/javadocs/servlets/</link>
+					</links>
 				</configuration>
 				<executions>
 					<execution>
