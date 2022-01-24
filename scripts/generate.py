@@ -1,5 +1,5 @@
 # Part of PushMode: https://pushmode.machinezoo.com
-import os
+import pathlib
 import textwrap
 import contextlib
 import re
@@ -8,8 +8,8 @@ import string
 # Attempting to use relative paths would mess up the file tree depending on where the script runs.
 # We will instead locate java sources relative to the running script.
 
-rootdir = os.path.dirname(os.path.realpath(__file__))
-sources = rootdir + '/src/main/java/com/machinezoo/pushmode/dom'
+rootdir = pathlib.Path(__file__).parent.parent
+sources = rootdir/'src/main/java/com/machinezoo/pushmode/dom'
 
 # Let's start by creating a knowledge base of information about HTML and SVG.
 # This data was manually collected from various online sources.
@@ -917,6 +917,6 @@ def attributes_source():
 
 # We can now run all the source generators with output redirected into the appropriate file.
 
-redirect(sources + '/Html.java', html_source)
-redirect(sources + '/Svg.java', svg_source)
-redirect(sources + '/DomAttributes.java', attributes_source)
+redirect(sources/'Html.java', html_source)
+redirect(sources/'Svg.java', svg_source)
+redirect(sources/'DomAttributes.java', attributes_source)
