@@ -24,6 +24,7 @@ import com.machinezoo.stagean.*;
  * Write operations cannot be concurrent with reads or other writes.
  */
 @NoTests
+@ApiIssue("Support roundtripping DOM tree to text (except for listeners, of course), for example with toXml() and fromXml() methods.")
 public abstract class DomContent implements Cloneable {
 	DomContent() {
 	}
