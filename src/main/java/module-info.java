@@ -1,4 +1,6 @@
 // Part of PushMode: https://pushmode.machinezoo.com
+import com.machinezoo.stagean.*;
+
 /**
  * PushMode is a server-side Java library that streams web app's HTML output down to the browser while user's actions are streamed back to the server.
  * See the <a href="https://pushmode.machinezoo.com/">website</a> for more information.
@@ -8,6 +10,7 @@
  * 
  * @see <a href="https://pushmode.machinezoo.com/">PushMode website</a>
  */
+@NoTests
 module com.machinezoo.pushmode {
 	exports com.machinezoo.pushmode;
 	exports com.machinezoo.pushmode.dom;
