@@ -10,6 +10,7 @@ import org.slf4j.*;
 import com.fasterxml.jackson.databind.*;
 import com.machinezoo.hookless.servlets.*;
 import com.machinezoo.noexception.*;
+import com.machinezoo.noexception.slf4j.*;
 import com.machinezoo.pushmode.messages.*;
 import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
@@ -46,7 +47,7 @@ public class SubmitServlet extends ReactiveServlet {
 			reloadCounter.increment();
 			return new ReactiveServletResponse().status(HttpServletResponse.SC_RESET_CONTENT);
 		}
-		Exceptions.log(logger).passing().run(() -> {
+		ExceptionLogging.log(logger).passing().run(() -> {
 			long inputSeq = json.get("i").asLong();
 			JsonNode events = json.get("e");
 			List<ListenerMessage> messages = new ArrayList<>();

@@ -4,7 +4,7 @@ package com.machinezoo.pushmode.messages;
 import java.util.*;
 import org.slf4j.*;
 import com.fasterxml.jackson.databind.*;
-import com.machinezoo.noexception.*;
+import com.machinezoo.noexception.slf4j.*;
 import com.machinezoo.pushmode.dom.*;
 
 class EventMessage extends ListenerMessage {
@@ -23,7 +23,7 @@ class EventMessage extends ListenerMessage {
 		if (listener instanceof DomEvent) {
 			DomEvent event = (DomEvent)listener;
 			if (name.equals(event.name()) && event.handler() != null)
-				Exceptions.log(logger).run(event.handler());
+				ExceptionLogging.log(logger).run(event.handler());
 		}
 	}
 	@Override

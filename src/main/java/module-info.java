@@ -23,7 +23,9 @@ module com.machinezoo.pushmode {
 	 */
 	requires transitive java.xml;
 	requires com.machinezoo.stagean;
+	requires com.machinezoo.noexception.slf4j;
 	requires com.machinezoo.hookless;
+	requires com.machinezoo.hookless.time;
 	/*
 	 * There should be a separate pushmode-servlets library. Core library should not depend on Jakarta servlet API.
 	 * Transitive, because we are providing a set of default servlets.

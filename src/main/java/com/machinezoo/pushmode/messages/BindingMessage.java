@@ -3,7 +3,7 @@ package com.machinezoo.pushmode.messages;
 
 import java.util.*;
 import com.fasterxml.jackson.databind.*;
-import com.machinezoo.noexception.*;
+import com.machinezoo.noexception.slf4j.*;
 import com.machinezoo.pushmode.dom.*;
 
 class BindingMessage extends ListenerMessage {
@@ -23,7 +23,7 @@ class BindingMessage extends ListenerMessage {
 		if (listener instanceof DomBinding) {
 			DomBinding binding = (DomBinding)listener;
 			if (attribute.equals(binding.attribute()) && binding.handler() != null)
-				Exceptions.log().consumer(binding.handler()).accept(value);
+				ExceptionLogging.log().consumer(binding.handler()).accept(value);
 		}
 	}
 	@Override

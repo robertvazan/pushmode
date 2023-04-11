@@ -40,7 +40,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>11</maven.compiler.release>
+		<maven.compiler.release>17</maven.compiler.release>
 	</properties>
 
 	<dependencies>
@@ -52,12 +52,17 @@
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless</artifactId>
-			<version>0.14.4</version>
+			<version>0.16.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.machinezoo.hookless</groupId>
+			<artifactId>hookless-time</artifactId>
+			<version>0.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.machinezoo.hookless</groupId>
 			<artifactId>hookless-servlets</artifactId>
-			<version>0.5.2</version>
+			<version>0.5.6</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -130,6 +135,7 @@
 				<version>3.3.1</version>
 				<configuration>
 					<notimestamp>true</notimestamp>
+					<doclint>all,-missing</doclint>
 					<bottom>
 						<![CDATA[<!-- No copyright message. -->]]>
 					</bottom>
@@ -170,6 +176,13 @@
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.thoughtworks.xstream</groupId>
+						<artifactId>xstream</artifactId>
+						<version>1.4.15</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

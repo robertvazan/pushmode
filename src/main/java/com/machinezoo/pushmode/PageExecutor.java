@@ -8,6 +8,7 @@ import java.util.stream.*;
 import org.slf4j.*;
 import com.machinezoo.hookless.*;
 import com.machinezoo.noexception.*;
+import com.machinezoo.noexception.slf4j.*;
 import com.machinezoo.stagean.*;
 
 /**
@@ -58,7 +59,7 @@ class PageExecutor implements ExecutorService {
 			Runnable task = queue.remove();
 			ReactiveExecutor.common().execute(() -> {
 				current.set(this);
-				Exceptions.log(logger).run(task);
+				ExceptionLogging.log(logger).run(task);
 				current.remove();
 				synchronized (this) {
 					executing = false;

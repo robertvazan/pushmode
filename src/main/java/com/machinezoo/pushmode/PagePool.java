@@ -4,7 +4,7 @@ package com.machinezoo.pushmode;
 import java.time.*;
 import java.util.*;
 import org.slf4j.*;
-import com.machinezoo.noexception.*;
+import com.machinezoo.noexception.slf4j.*;
 import com.machinezoo.stagean.*;
 import io.micrometer.core.instrument.*;
 
@@ -31,7 +31,7 @@ public class PagePool {
 	public synchronized void add(PushPage page) {
 		PoolEntry entry = new PoolEntry(page);
 		pool.put(page.pageId(), entry);
-		Exceptions.log(logger).run(this::purge);
+		ExceptionLogging.log(logger).run(this::purge);
 	}
 	public synchronized PushPage lookup(String id) {
 		PoolEntry entry = pool.get(id);
