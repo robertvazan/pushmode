@@ -5,7 +5,7 @@
 
 	<groupId>com.machinezoo.pushmode</groupId>
 	<artifactId>pushmode</artifactId>
-	<version>0.8.2</version>
+	<version>0.8.3</version>
 
 	<name>PushMode</name>
 	<description>Server-side Java library that streams web app's HTML output down to the browser while user's actions are streamed back to the server.</description>
