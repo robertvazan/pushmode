@@ -464,7 +464,8 @@ public abstract class DomContainer extends DomContent {
 		public <T> T[] toArray(T[] array) {
 			if (size > array.length)
 				array = (T[])Array.newInstance(array.getClass().getComponentType(), size);
-			System.arraycopy(children, 0, array, 0, size);
+			if (children != null)
+				System.arraycopy(children, 0, array, 0, size);
 			if (size < array.length)
 				array[size] = null;
 			return array;
