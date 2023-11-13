@@ -22,12 +22,12 @@ class Project(scaffold.Java):
         yield from super().dependencies()
         yield self.use_hookless()
         yield self.use_hookless_time()
-        yield self.use('com.machinezoo.hookless:hookless-servlets:0.5.6')
+        yield self.use('com.machinezoo.hookless:hookless-servlets:0.5.7')
         # Used for JSON messages exchanged with client-side JS.
         yield self.use_jackson()
         yield self.use_commons_io()
         # Used for URL parsing only.
-        yield self.use('org.apache.httpcomponents:httpclient:4.5.13')
+        yield self.use('org.apache.httpcomponents.core5:httpcore5:5.2.3')
         yield self.use_junit()
         yield self.use_hamcrest()
         yield self.use_slf4j_test()

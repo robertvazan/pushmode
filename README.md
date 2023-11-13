@@ -3,7 +3,7 @@
 
 # PushMode
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.machinezoo.pushmode/pushmode)](https://search.maven.org/artifact/com.machinezoo.pushmode/pushmode)
+[![Maven Central](https://img.shields.io/maven-central/v/com.machinezoo.pushmode/pushmode)](https://central.sonatype.com/artifact/com.machinezoo.pushmode/pushmode)
 [![Build status](https://github.com/robertvazan/pushmode/workflows/build/badge.svg)](https://github.com/robertvazan/pushmode/actions/workflows/build.yml)
 [![Test coverage](https://codecov.io/gh/robertvazan/pushmode/branch/master/graph/badge.svg)](https://codecov.io/gh/robertvazan/pushmode)
 
